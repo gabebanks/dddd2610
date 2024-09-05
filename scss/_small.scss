@@ -53,6 +53,9 @@ nav {
             flex: 1;
         }
     }
+    li.active {
+        background-color: black;
+    }
     a {
         display: block;
         padding: 0.75rem;
