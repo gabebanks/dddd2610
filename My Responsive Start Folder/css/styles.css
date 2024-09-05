@@ -305,4 +305,102 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  block-size: 100%;
+}
+
+/*---- apply a natural box layout model to all elements -------*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  block-size: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #00172b;
+}
+
+h1 {
+  color: rgb(45, 61, 77);
+}
+
+#headerWrapper {
+  background-color: #abc;
+  color: rgba(17, 34, 51, 0.2666666667);
+}
+
+header {
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  gap: 8px;
+}
+header h1 {
+  margin: 0;
+}
+
+#mainWrapper {
+  margin: 0;
+  padding-inline-start: 1rem;
+}
+
+#navWrapper {
+  background-color: rgb(26, 50, 56);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+nav ul li {
+  flex: 1;
+}
+nav a {
+  display: block;
+  padding: 0.75rem;
+  color: rgb(165, 165, 165);
+  text-align: center;
+  text-decoration: none;
+}
+nav a:hover {
+  color: rgb(255, 255, 255);
+}
+
+#footerWrapper {
+  background-color: #abc;
+}
+
+footer {
+  padding: 0.5rem 16px;
+}
+footer p {
+  margin: 0;
+  font-weight: 100;
+  text-align: center;
+}
+
+@media only screen and (min-width: 35rem) {
+  header {
+    padding: 2rem 16px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  header, nav, main, footer {
+    max-inline-size: 60rem;
+    margin: auto;
+  }
 }/*# sourceMappingURL=styles.css.map */
