@@ -43,7 +43,7 @@ h1 {
  */
 hr {
   box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
+  block-size: 0; /* 1 */
   overflow: visible; /* 2 */
 }
 
@@ -70,7 +70,7 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none; /* 1 */
+  border-block-end: none; /* 1 */
   text-decoration: underline; /* 2 */
   text-decoration: underline dotted; /* 2 */
 }
@@ -114,11 +114,11 @@ sup {
 }
 
 sub {
-  bottom: -0.25em;
+  inset-block-end: -0.25em;
 }
 
 sup {
-  top: -0.5em;
+  inset-block-start: -0.5em;
 }
 
 /* Embedded content
@@ -168,6 +168,13 @@ select { /* 1 */
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  appearance: button;
+}
+
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -206,7 +213,7 @@ legend {
   box-sizing: border-box; /* 1 */
   color: inherit; /* 2 */
   display: table; /* 1 */
-  max-width: 100%; /* 1 */
+  max-inline-size: 100%; /* 1 */
   padding: 0; /* 3 */
   white-space: normal; /* 1 */
 }
@@ -240,7 +247,7 @@ textarea {
  */
 [type=number]::-webkit-inner-spin-button,
 [type=number]::-webkit-outer-spin-button {
-  height: auto;
+  block-size: auto;
 }
 
 /**
@@ -248,6 +255,7 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
+  appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
 
@@ -299,155 +307,100 @@ template {
   display: none;
 }
 
-/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+/* Prevent adjustments of font size after orientation changes.  */
 html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  block-size: 100%;
 }
 
-/*  Apply a natural box layout model to all elements  */
+/*---- apply a natural box layout model to all elements -------*/
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* --------------------------- BODY --------------------------- */
 body {
-  font-family: "Barlow", sans-serif;
-  font-weight: 300;
-  min-width: 320px;
+  block-size: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #00172b;
 }
 
-/* --------------------------- HEADER --------------------------- */
+h1 {
+  color: rgb(45, 61, 77);
+}
+
 #headerWrapper {
-  border-bottom: 1px solid #ccc;
+  background-color: #abc;
+  color: rgba(17, 34, 51, 0.2666666667);
 }
 
 header {
   display: flex;
-  grid-template-columns: 50px auto;
-  column-gap: 10px;
-  align-items: center;
-  padding: 0.5rem 10px;
+  align-items: flex-end;
+  padding: 16px;
+  gap: 8px;
 }
-header span {
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: #d46f10;
+header h1 {
+  margin: 0;
 }
 
-#final {
-  margin-left: auto;
-}
-
-/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-#navWrapper {
-  background-color: #d46f10;
+#mainWrapper {
+  margin: 0;
+  padding-inline-start: 1rem;
 }
 
 nav ul {
+  background-color: rgb(35, 68, 88);
+  list-style-type: none;
   padding: 0;
-  margin: 0 10px;
+  margin: 0;
+  display: flex;
 }
 nav ul li {
-  list-style-type: none;
+  flex: 1;
 }
-nav ul li a {
-  color: #ccc;
-  text-decoration: none;
+nav li.active {
+  background-color: rgb(105, 89, 44);
+}
+nav a {
   display: block;
-  padding: 0.8rem 10px;
-}
-nav ul li.active a {
-  background-color: rgba(197, 242, 255, 0.8);
-  color: #d46f10;
-  border-radius: 10px;
-}
-
-/* --------------------------- MAIN --------------------------- */
-main h1 {
-  padding: 1rem 10px 0.5rem 10px;
-  font-size: 1.5rem;
-  color: #d46f10;
-  font-weight: 300;
-}
-main p {
-  padding: 0.5rem 10px;
-  color: #333;
-  line-height: 150%;
-}
-
-section {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-section div {
-  width: 100%;
-  padding: 1rem 10px;
-}
-section div img {
-  width: 100%;
-  height: auto;
-}
-
-section div p {
+  padding: 0.75rem;
+  color: rgb(165, 165, 165);
   text-align: center;
-  background-color: #d46f10;
-  margin: 0;
-  border-radius: 0 0 16px 16px;
-  color: white;
+  text-decoration: none;
+}
+nav a:hover {
+  color: rgb(255, 255, 255);
 }
 
-section div img {
-  border-radius: 16px 16px 0 0;
-  margin: 0;
-}
-
-/* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-  background-color: #d46f10;
+  background-color: #abc;
 }
 
 footer {
-  font-size: 0.85rem;
-  padding: 1rem 10px;
-  color: #ccc;
-  text-align: center;
-  line-height: 150%;
+  padding: 0.5rem 16px;
 }
-footer a {
-  color: #ccc;
+footer p {
+  margin: 0;
+  font-weight: 100;
+  text-align: center;
 }
 
 @media only screen and (min-width: 35rem) {
-  /* NAVIGATION STUFF GOES HERE  */
-  nav ul {
-    display: flex;
-    justify-content: flex-start;
-    column-gap: 10px;
+  header {
+    padding: 2rem 16px;
   }
-  nav ul li a {
-    margin: 10px 0;
-  }
-  nav ul li a:hover {
-    text-decoration: underline 2px #661212;
-  }
-  section {
-    grid-template-columns: 1fr 1fr;
+  header h1 {
+    font-size: 2rem;
   }
 }
 @media only screen and (min-width: 64rem) {
-  header, nav, main {
-    max-width: 960px;
+  header, nav, main, footer {
+    max-inline-size: 60rem;
     margin: auto;
-  }
-  /* NAVIGATION STUFF GOES HERE  */
-  nav ul li a {
-    padding: 0.5rem 10px;
-  }
-  section {
-    grid-template-columns: 1fr 1fr 1fr;
   }
 }/*# sourceMappingURL=styles.css.map */
