@@ -23,6 +23,25 @@ body {
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {border-bottom: 1px solid $greyColor;}
 header {
+    display: grid;
+    grid-template-columns: 50px auto;
+    column-gap: $gutter;
+    align-items: center; //vertically
+    padding: .5rem $gutter;
+    span {
+        font-size: 1.6rem;
+        font-weight: $lightWeight;
+        color: $primaryColor;
+    }
+} // end header
+
+
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
+
+
+/* --------------------------- HEADER --------------------------- */
+#headerWrapper {border-bottom: 1px solid $greyColor;}
+header {
     display: flex;
     grid-template-columns: 50px auto;
     column-gap: $gutter;
@@ -88,27 +107,66 @@ main {
     }
 }// end main
 
-section {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-section div {
+.hero img {
     width: 100%;
-    img { width: 100%; height: auto;}
-    padding: 1rem $gutter;
+    height: auto;
 }
 
-section div p {
+/* --------------------------- FOOTER --------------------------- */
+#footerWrapper {
+    background-color: $primaryColor
+} // end footer wrapper
+
+footer {
+    font-size: .85rem;
+    padding: 1rem $gutter;
+    color: $greyColor;
     text-align: center;
-    background-color: $primaryColor;
-    margin: 0;
-    border-radius: 0 0  16px 16px;
-    color: white;
+    line-height: $leading;
+    a {color: $greyColor;}
+}// end footer
+
+
+
+
+video {
+    width: 100%;
 }
-section div img {
-    border-radius: 16px 16px 0 0;
-    margin: 0;
+
+
+details {
+    margin: .5rem $gutter;
+    font-weight: 700;
+    background-color: lightblue;
+    border-radius: 16px;
+    padding: 10px;
+
+    summary {
+        background-color: lightblue;
+        padding: 10px;
+        border-radius: 16px;
+    }
 }
+
+
+
+
+/* --------------------------- MAIN --------------------------- */
+main {
+    h1 {
+        padding: 1rem $gutter.5rem $gutter;
+        font-size: 1.5rem;
+        color: $secondaryColor;
+        font-weight: $lightWeight
+    }
+    p {
+        padding: .5rem $gutter;
+        color: #333;
+        line-height: $leading;
+    }
+}// end main
+
+
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {

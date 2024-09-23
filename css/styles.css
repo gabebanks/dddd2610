@@ -314,11 +314,30 @@ html {
 
 /* --------------------------- BODY --------------------------- */
 body {
-  font-family: "Barlow", sans-serif;
-  font-weight: 300;
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
   min-width: 320px;
 }
 
+/* --------------------------- HEADER --------------------------- */
+#headerWrapper {
+  border-bottom: 1px solid #ccc;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 50px auto;
+  column-gap: 10px;
+  align-items: center;
+  padding: 0.5rem 10px;
+}
+header span {
+  font-size: 1.6rem;
+  font-weight: 100;
+  color: #226277;
+}
+
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
   border-bottom: 1px solid #ccc;
@@ -333,8 +352,8 @@ header {
 }
 header span {
   font-size: 1.6rem;
-  font-weight: 300;
-  color: #d46f10;
+  font-weight: 100;
+  color: #226277;
 }
 
 #final {
@@ -343,7 +362,7 @@ header span {
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 #navWrapper {
-  background-color: #d46f10;
+  background-color: #226277;
 }
 
 nav ul {
@@ -361,7 +380,7 @@ nav ul li a {
 }
 nav ul li.active a {
   background-color: rgba(197, 242, 255, 0.8);
-  color: #d46f10;
+  color: #226277;
   border-radius: 10px;
 }
 
@@ -369,8 +388,8 @@ nav ul li.active a {
 main h1 {
   padding: 1rem 10px 0.5rem 10px;
   font-size: 1.5rem;
-  color: #d46f10;
-  font-weight: 300;
+  color: #1b3a42;
+  font-weight: 100;
 }
 main p {
   padding: 0.5rem 10px;
@@ -378,36 +397,60 @@ main p {
   line-height: 150%;
 }
 
-section {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-section div {
-  width: 100%;
-  padding: 1rem 10px;
-}
-section div img {
+.hero img {
   width: 100%;
   height: auto;
 }
 
-section div p {
-  text-align: center;
-  background-color: #d46f10;
-  margin: 0;
-  border-radius: 0 0 16px 16px;
-  color: white;
+/* --------------------------- FOOTER --------------------------- */
+#footerWrapper {
+  background-color: #226277;
 }
 
-section div img {
-  border-radius: 16px 16px 0 0;
-  margin: 0;
+footer {
+  font-size: 0.85rem;
+  padding: 1rem 10px;
+  color: #ccc;
+  text-align: center;
+  line-height: 150%;
+}
+footer a {
+  color: #ccc;
+}
+
+video {
+  width: 100%;
+}
+
+details {
+  margin: 0.5rem 10px;
+  font-weight: 700;
+  background-color: lightblue;
+  border-radius: 16px;
+  padding: 10px;
+}
+details summary {
+  background-color: lightblue;
+  padding: 10px;
+  border-radius: 16px;
+}
+
+/* --------------------------- MAIN --------------------------- */
+main h1 {
+  padding: 1rem 10px 0.5rem 10px;
+  font-size: 1.5rem;
+  color: #1b3a42;
+  font-weight: 100;
+}
+main p {
+  padding: 0.5rem 10px;
+  color: #333;
+  line-height: 150%;
 }
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-  background-color: #d46f10;
+  background-color: #226277;
 }
 
 footer {
@@ -432,10 +475,7 @@ footer a {
     margin: 10px 0;
   }
   nav ul li a:hover {
-    text-decoration: underline 2px #661212;
-  }
-  section {
-    grid-template-columns: 1fr 1fr;
+    text-decoration: underline 2px #091b25;
   }
 }
 @media only screen and (min-width: 64rem) {
@@ -444,10 +484,4 @@ footer a {
     margin: auto;
   }
   /* NAVIGATION STUFF GOES HERE  */
-  nav ul li a {
-    padding: 0.5rem 10px;
-  }
-  section {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }/*# sourceMappingURL=styles.css.map */
