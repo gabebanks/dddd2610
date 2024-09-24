@@ -314,30 +314,11 @@ html {
 
 /* --------------------------- BODY --------------------------- */
 body {
-  font-family: "Kanit", sans-serif;
-  font-weight: 100;
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
   min-width: 320px;
 }
 
-/* --------------------------- HEADER --------------------------- */
-#headerWrapper {
-  border-bottom: 1px solid #ccc;
-}
-
-header {
-  display: grid;
-  grid-template-columns: 50px auto;
-  column-gap: 10px;
-  align-items: center;
-  padding: 0.5rem 10px;
-}
-header span {
-  font-size: 1.6rem;
-  font-weight: 100;
-  color: #226277;
-}
-
-/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
   border-bottom: 1px solid #ccc;
@@ -352,8 +333,8 @@ header {
 }
 header span {
   font-size: 1.6rem;
-  font-weight: 100;
-  color: #226277;
+  font-weight: 300;
+  color: #d46f10;
 }
 
 #final {
@@ -362,7 +343,7 @@ header span {
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 #navWrapper {
-  background-color: #226277;
+  background-color: #d46f10;
 }
 
 nav ul {
@@ -380,7 +361,7 @@ nav ul li a {
 }
 nav ul li.active a {
   background-color: rgba(197, 242, 255, 0.8);
-  color: #226277;
+  color: #d46f10;
   border-radius: 10px;
 }
 
@@ -388,8 +369,8 @@ nav ul li.active a {
 main h1 {
   padding: 1rem 10px 0.5rem 10px;
   font-size: 1.5rem;
-  color: #1b3a42;
-  font-weight: 100;
+  color: #d46f10;
+  font-weight: 300;
 }
 main p {
   padding: 0.5rem 10px;
@@ -397,60 +378,36 @@ main p {
   line-height: 150%;
 }
 
-.hero img {
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+section div {
+  width: 100%;
+  padding: 1rem 10px;
+}
+section div img {
   width: 100%;
   height: auto;
 }
 
-/* --------------------------- FOOTER --------------------------- */
-#footerWrapper {
-  background-color: #226277;
-}
-
-footer {
-  font-size: 0.85rem;
-  padding: 1rem 10px;
-  color: #ccc;
+section div p {
   text-align: center;
-  line-height: 150%;
-}
-footer a {
-  color: #ccc;
-}
-
-video {
-  width: 100%;
+  background-color: #d46f10;
+  margin: 0;
+  border-radius: 0 0 16px 16px;
+  color: white;
 }
 
-details {
-  margin: 0.5rem 10px;
-  font-weight: 700;
-  background-color: lightblue;
-  border-radius: 16px;
-  padding: 10px;
-}
-details summary {
-  background-color: lightblue;
-  padding: 10px;
-  border-radius: 16px;
-}
-
-/* --------------------------- MAIN --------------------------- */
-main h1 {
-  padding: 1rem 10px 0.5rem 10px;
-  font-size: 1.5rem;
-  color: #1b3a42;
-  font-weight: 100;
-}
-main p {
-  padding: 0.5rem 10px;
-  color: #333;
-  line-height: 150%;
+section div img {
+  border-radius: 16px 16px 0 0;
+  margin: 0;
 }
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-  background-color: #226277;
+  background-color: #d46f10;
 }
 
 footer {
@@ -475,7 +432,58 @@ footer a {
     margin: 10px 0;
   }
   nav ul li a:hover {
-    text-decoration: underline 2px #091b25;
+    text-decoration: underline 2px #661212;
+  }
+  section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  header, nav, main {
+    max-width: 960px;
+    margin: auto;
+  }
+  /* NAVIGATION STUFF GOES HERE  */
+  nav ul li a {
+    padding: 0.5rem 10px;
+  }
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}/*# sourceMappingURL=styles.css.map */ 0.5rem 10px;
+  color: #333;
+  line-height: 150%;
+}
+
+/* --------------------------- FOOTER --------------------------- */
+#footerWrapper {
+  background-color: #226277;
+}
+
+footer {
+  font-size: 0.85rem;
+  padding: 1rem 10px;
+  color: #ccc;
+  text-align: center;
+  line-height: 150%;
+}
+footer a {
+  color: #ccc;
+}
+
+@media only screen and (min-width: 35rem) {
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 10px;
+  }
+  nav ul li a {
+    margin: 10px 0;
+  }
+  nav ul li a:hover {
+    text-decoration: underline;
+    text-decoration-color: #1b3a42;
+    text-decoration-style: wavy;
   }
 }
 @media only screen and (min-width: 64rem) {
