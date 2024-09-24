@@ -321,7 +321,7 @@ body {
 
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid white;
 }
 
 header {
@@ -344,7 +344,7 @@ header img {
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid white;
 }
 
 header {
@@ -378,7 +378,7 @@ nav ul li {
   list-style-type: none;
 }
 nav ul li a {
-  color: #ccc;
+  color: white;
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -416,12 +416,12 @@ main p {
 footer {
   font-size: 0.85rem;
   padding: 1rem 10px;
-  color: #ccc;
+  color: white;
   text-align: center;
   line-height: 150%;
 }
 footer a {
-  color: #ccc;
+  color: white;
 }
 
 video {
@@ -462,12 +462,12 @@ main p {
 footer {
   font-size: 0.85rem;
   padding: 1rem 10px;
-  color: #ccc;
+  color: white;
   text-align: center;
   line-height: 150%;
 }
 footer a {
-  color: #ccc;
+  color: white;
 }
 
 @media only screen and (min-width: 35rem) {
