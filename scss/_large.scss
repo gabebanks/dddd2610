@@ -1,6 +1,32 @@
-
 header, nav, main {
     max-width: 960px;
     margin: auto;
 }
+
+div.allcards {
+    section {
+        flex-basis: calc(33.333% - (($gutter*2)/3))
+    }
+}
 /* NAVIGATION STUFF GOES HERE  */
+footer div {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#myButton {
+    display: none;
+}
+ul.menuLinks li a {
+    padding: .75rem 1rem;
+    margin: 0;
+}
+ul.menuLinks, ul.menuLinks.open {
+    display: flex;
+    justify-content: flex-end;
+}
+ul.menuLinks a:hover {
+    background-color: #eee;
+    color: black;
+    text-decoration: none;
+}

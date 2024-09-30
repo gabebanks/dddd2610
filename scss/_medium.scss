@@ -1,16 +1,33 @@
+/* NAVIGATION STUFF GOES HERE  */
+div.allcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gutter;
+    section {
+        flex-basis: calc(50% - ($gutter/2))
+    }
+}
+
+footer div {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
 
 nav {
     ul {
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         column-gap: $gutter;
     }
     ul li a {
         margin: 10px 0;
     }
     ul li a:hover {
-        text-decoration: underline;
-        text-decoration-color: $secondaryColor;
-        text-decoration-style: wavy;
+        text-decoration: underline 2px $accentColor;
     }
+}
+
+section {
+    grid-template-columns: 1fr 1fr;
 }

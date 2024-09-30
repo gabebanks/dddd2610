@@ -15,7 +15,7 @@ html {
 /* --------------------------- BODY --------------------------- */
 body {
     font-family: $defaultFont;
-    font-weight: $normalWeight;
+    font-weight: $lightWeight;
     min-width: 320px;
 }
 
@@ -33,29 +33,12 @@ header {
         font-weight: $lightWeight;
         color: $primaryColor;
     }
-} // end header
-header img {
-    width: 50px;
-  }
-
-/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-
-
-/* --------------------------- HEADER --------------------------- */
-#headerWrapper {border-bottom: 1px solid $greyColor;}
-header {
-    display: flex;
-    grid-template-columns: 50px auto;
-    column-gap: $gutter;
-    align-items: center; //vertically
-    padding: .5rem $gutter;
-    span {
-        font-size: 1.6rem;
-        font-weight: $lightWeight;
-        color: $primaryColor;
+    img {
+        width: 50px;
+        height: auto;
     }
 } // end header
-#final {margin-left: auto;}
+
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 
@@ -66,8 +49,6 @@ nav {
     ul {
         padding: 0;
         margin: 0 $gutter;
-        justify-content: center;
-
     }
     ul li {
         list-style-type: none;
@@ -75,102 +56,110 @@ nav {
     ul li a {
         color: $greyColor;
         text-decoration: none;
-        display: flex;
-        justify-content: center;
+        display: block;
         padding: .8rem $gutter;
     }
     ul li.active a {
-        background-color: rgba(197, 242, 255, 0.8);
+        background-color: #eee;
         color: $primaryColor;
+    }
+}
+#myButton::before {
+    content: "\2630";
+}
+#myButton {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    font-weight: $lightWeight;
+    cursor: pointer;
+}
+ul.menuLinks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    li a {
+        color: #fff;
+        display: block;
+        padding: .75rem $gutter;
+        text-decoration: none;
+    }
+    li.active a {
+        background-color: #eee;
+    }
+}
+ul.open.menuLinks {
+    display: block;
+}x
+#myButton.open::before {
+    content: "x";
+}
+ul.menuLinks a:hover {
+    background-color: #eee;
+    color: black;
+    text-decoration: none;
+}
+/* --------------------------- MAIN --------------------------- */
+main {
+    h1 {
+        padding: 1rem $gutter.5rem $gutter;
+        font-size: 1.5rem;
+        color: $primaryColor;
+        font-weight: $lightWeight
+    }
+    p {
+        padding: .5rem $gutter;
+        color: #333;
+        line-height: $leading;
+    }
+}// end main
+
+div.allcards {
+    padding: 0 $gutter;
+    section {
+        border: 1px solid rgb(0, 0, 0);
         border-radius: 10px;
-    }
-}
+        overflow: hidden;
+        margin: 1rem 0;
+        h2, p, img {
+            margin: 0;
+            padding: 1rem $gutter;
+        }
+        h2 {
+            background-color: rgb(0, 0, 0);
+            font-size: 1.5rem;
+            text-align: center;
+            color: White;
 
-
-
-
-
-
-
-
-
-
-
-/* --------------------------- MAIN --------------------------- */
-main {
-    h1 {
-        padding: 1rem $gutter.5rem $gutter;
-        font-size: 1.5rem;
-        color: $secondaryColor;
-        font-weight: $lightWeight
-    }
-    p {
-        padding: .5rem $gutter;
-        color: #333;
-        line-height: $leading;
-    }
-}// end main
-
-.hero img {
-    width: 100%;
-    height: auto;
-}
-
-/* --------------------------- FOOTER --------------------------- */
-#footerWrapper {
-    background-color: $primaryColor
-} // end footer wrapper
-
-footer {
-    font-size: .85rem;
-    padding: 1rem $gutter;
-    color: $greyColor;
-    text-align: center;
-    line-height: $leading;
-    a {color: $greyColor;}
-}// end footer
-
-
-
-
-video {
-    width: 100%;
-}
-
-
-details {
-    margin: .5rem $gutter;
-    font-weight: 700;
-    background-color: lightblue;
-    border-radius: 16px;
-    padding: 10px;
-
-    summary {
-        background-color: lightblue;
-        padding: 10px;
-        border-radius: 16px;
-    }
-}
-
-
-
-
-/* --------------------------- MAIN --------------------------- */
-main {
-    h1 {
-        padding: 1rem $gutter.5rem $gutter;
-        font-size: 1.5rem;
-        color: $secondaryColor;
-        font-weight: $lightWeight
-    }
-    p {
-        padding: .5rem $gutter;
-        color: #333;
-        line-height: $leading;
-    }
-}// end main
-
-
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        img.e2e {
+            padding: 0;
+        }
+        p {
+            font-style: italic;
+        }
+        a {
+            display: block;
+            background-color: #eee;
+            padding: 12px;
+            text-align: center;
+            margin: 0 3rem 1rem 3rem;
+            border-radius: 8px;
+            color: black;
+            text-decoration: none;
+        }
+    } //end of section
+} // end of allcards
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
@@ -178,10 +167,43 @@ main {
 } // end footer wrapper
 
 footer {
-    font-size: .85rem;
-    padding: 1rem $gutter;
+    p.legal {
+        margin: 0;
+        font-weight: $lightWeight;
+        text-align: center;
+    }
+    section {
+        
+    } // end of section
+    section.contact {
+        p{font-size: 1.2rem; margin: .5rem;}
+        ion-icon {color: rgb(255, 255, 255); padding-right: 5px;}
+    } // end of contact
+    section.social {
+        display: flex;
+        justify-content: center;
+        a {display: block; 
+            border: solid 2px #939393; 
+            font-size: 2rem; 
+            margin: .5rem; 
+            padding: .5; 
+            border-radius: 6px; 
+            &:hover{
+                background-color: rgb(0, 72, 120);
+            }
+        }
+        ion-icon {
+
+        }
+
+    } // end of social
+    section.location {
+        font-size: 1.5rem;
+    } // end of location
+    padding: 0.5rem $gutter;
     color: $greyColor;
     text-align: center;
     line-height: $leading;
     a {color: $greyColor;}
+    text-align: left;
 }// end footer

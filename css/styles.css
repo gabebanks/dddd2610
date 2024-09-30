@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -314,14 +315,14 @@ html {
 
 /* --------------------------- BODY --------------------------- */
 body {
-  font-family: "Kanit", sans-serif;
-  font-weight: 400;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 300;
   min-width: 320px;
 }
 
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #ccc;
 }
 
 header {
@@ -333,69 +334,89 @@ header {
 }
 header span {
   font-size: 1.6rem;
-  font-weight: 100;
-  color: #226277;
+  font-weight: 300;
+  color: #000000;
 }
-
 header img {
   width: 50px;
-}
-
-/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-/* --------------------------- HEADER --------------------------- */
-#headerWrapper {
-  border-bottom: 1px solid white;
-}
-
-header {
-  display: flex;
-  grid-template-columns: 50px auto;
-  column-gap: 10px;
-  align-items: center;
-  padding: 0.5rem 10px;
-}
-header span {
-  font-size: 1.6rem;
-  font-weight: 100;
-  color: #226277;
-}
-
-#final {
-  margin-left: auto;
+  height: auto;
 }
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 #navWrapper {
-  background-color: #226277;
+  background-color: #000000;
 }
 
 nav ul {
   padding: 0;
   margin: 0 10px;
-  justify-content: center;
 }
 nav ul li {
   list-style-type: none;
 }
 nav ul li a {
-  color: white;
+  color: #ccc;
   text-decoration: none;
-  display: flex;
-  justify-content: center;
+  display: block;
   padding: 0.8rem 10px;
 }
 nav ul li.active a {
-  background-color: rgba(197, 242, 255, 0.8);
-  color: #226277;
-  border-radius: 10px;
+  background-color: #eee;
+  color: #000000;
+}
+
+#myButton::before {
+  content: "☰";
+}
+
+#myButton {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+ul.menuLinks {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+ul.menuLinks li a {
+  color: #fff;
+  display: block;
+  padding: 0.75rem 10px;
+  text-decoration: none;
+}
+ul.menuLinks li.active a {
+  background-color: #eee;
+}
+
+ul.open.menuLinks {
+  display: block;
+}
+
+x #myButton.open::before {
+  content: "x";
+}
+
+ul.menuLinks a:hover {
+  background-color: #eee;
+  color: black;
+  text-decoration: none;
 }
 
 /* --------------------------- MAIN --------------------------- */
 main h1 {
   padding: 1rem 10px 0.5rem 10px;
   font-size: 1.5rem;
-  color: #1b3a42;
-  font-weight: 100;
+  color: #000000;
+  font-weight: 300;
 }
 main p {
   padding: 0.5rem 10px;
@@ -403,86 +424,122 @@ main p {
   line-height: 150%;
 }
 
-.hero img {
+div.allcards {
+  padding: 0 10px;
+}
+div.allcards section {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+div.allcards section h2, div.allcards section p, div.allcards section img {
+  margin: 0;
+  padding: 1rem 10px;
+}
+div.allcards section h2 {
+  background-color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  text-align: center;
+  color: White;
+}
+div.allcards section img {
   width: 100%;
   height: auto;
+  display: block;
+}
+div.allcards section img.e2e {
+  padding: 0;
+}
+div.allcards section p {
+  font-style: italic;
+}
+div.allcards section a {
+  display: block;
+  background-color: #eee;
+  padding: 12px;
+  text-align: center;
+  margin: 0 3rem 1rem 3rem;
+  border-radius: 8px;
+  color: black;
+  text-decoration: none;
 }
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-  background-color: #226277;
+  background-color: #000000;
 }
 
 footer {
-  font-size: 0.85rem;
-  padding: 1rem 10px;
-  color: white;
-  text-align: center;
-  line-height: 150%;
-}
-footer a {
-  color: white;
-}
-
-video {
-  width: 100%;
-}
-
-details {
-  margin: 0.5rem 10px;
-  font-weight: 700;
-  background-color: lightblue;
-  border-radius: 16px;
-  padding: 10px;
-}
-details summary {
-  background-color: lightblue;
-  padding: 10px;
-  border-radius: 16px;
-}
-
-/* --------------------------- MAIN --------------------------- */
-main h1 {
-  padding: 1rem 10px 0.5rem 10px;
-  font-size: 1.5rem;
-  color: #1b3a42;
-  font-weight: 100;
-}
-main p {
   padding: 0.5rem 10px;
-  color: #333;
-  line-height: 150%;
-}
-
-/* --------------------------- FOOTER --------------------------- */
-#footerWrapper {
-  background-color: #226277;
-}
-
-footer {
-  font-size: 0.85rem;
-  padding: 1rem 10px;
-  color: white;
+  color: #ccc;
   text-align: center;
   line-height: 150%;
+  text-align: left;
+}
+footer p.legal {
+  margin: 0;
+  font-weight: 300;
+  text-align: center;
+}
+footer section.contact p {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+footer section.contact ion-icon {
+  color: rgb(255, 255, 255);
+  padding-right: 5px;
+}
+footer section.social {
+  display: flex;
+  justify-content: center;
+}
+footer section.social a {
+  display: block;
+  border: solid 2px #939393;
+  font-size: 2rem;
+  margin: 0.5rem;
+  padding: 0.5;
+  border-radius: 6px;
+}
+footer section.social a:hover {
+  background-color: rgb(0, 72, 120);
+}
+footer section.location {
+  font-size: 1.5rem;
 }
 footer a {
-  color: white;
+  color: #ccc;
 }
 
 @media only screen and (min-width: 35rem) {
+  /* NAVIGATION STUFF GOES HERE  */
+  div.allcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  div.allcards section {
+    flex-basis: calc(50% - 5px);
+  }
+  footer div {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+  }
   nav ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     column-gap: 10px;
   }
   nav ul li a {
     margin: 10px 0;
   }
   nav ul li a:hover {
-    text-decoration: underline;
-    text-decoration-color: #1b3a42;
-    text-decoration-style: wavy;
+    text-decoration: underline 2px #3990c3;
+  }
+  section {
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media only screen and (min-width: 64rem) {
@@ -490,5 +547,28 @@ footer a {
     max-width: 960px;
     margin: auto;
   }
+  div.allcards section {
+    flex-basis: calc(33.333% - 6.6666666667px);
+  }
   /* NAVIGATION STUFF GOES HERE  */
+  footer div {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  #myButton {
+    display: none;
+  }
+  ul.menuLinks li a {
+    padding: 0.75rem 1rem;
+    margin: 0;
+  }
+  ul.menuLinks, ul.menuLinks.open {
+    display: flex;
+    justify-content: flex-end;
+  }
+  ul.menuLinks a:hover {
+    background-color: #eee;
+    color: black;
+    text-decoration: none;
+  }
 }/*# sourceMappingURL=styles.css.map */

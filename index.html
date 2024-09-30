@@ -3,80 +3,114 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Nexus Studios</title>
+	<title>Apple Technology</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/styles.min.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 <div id="headerWrapper">
 	<header>
-        <img src="logo1x.png" srcset="logo2x.png 2x, logo3x.png 3x" alt="Logo"/>
-		<span>Nexus Studios</span>
+        <img src="logo1x.jpg" srcset="logo2x.jpg 2x, logo3x.jpg 3x" alt="Logo"/>
+		<span>Technology</span>
 	</header>
-</div>
- 
+</div><!-- end header wrapper -->
+
+    
+    
 <div id="navWrapper">
     <nav>
-        <ul>
-            <li><a href="#">Residential</a></li>
-            <li><a href="#">Commercial</a></li>
-            <li class="active"><a href="#">Portfolio</a></li>
-            <li><a href="#">Interior Design</a></li>
-            <li><a href="#">Contact</a></li>
+        <button id="myButton"></button>
+        <ul class="menuLinks">
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Entertainment</a></li>
+            <li class="active"><a href="#">Products</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Support</a></li>
         </ul>
     </nav>
-</div>
+</div> <!-- end nav wrapper -->
 
 <div id="mainWrapper">
     <main>
-        <picture class="hero">
-            <source media="(max-width: 700px)" srcset="images/hero-small.webp">
-            <source media="(max-width: 1100px)" srcset="images/hero-medium.webp">
-            <img src="images/hero-large.webp" alt="hero" width="16" height="9">
-        </picture>
 
-        <h1>Portfolio</h1>
+        <h1>Welcome to Apple</h1>
+        <div class="allcards">
+            <section>
+                <h2>iPhone 16 Pro</h2>
+                <img src="images/image4.webp" alt="iPhone Pro" width="300" height="175">
+                <p>iPhone 16 Pro features a Grade 5 titanium design with a new, refined microblasted finish. Titanium has one of the highest strength-to-weight ratios of any metal, making these models incredibly strong and impressively light. </p>
+                <a href="https://www.apple.com/iphone-16-pro/">Learn More</a>
+            </section>
 
-        <video controls>
-            <source src="media/trimmed_hb.mp4" type="video/mp4" />
-            <source src="media/trimmed_hb.mp4" type="video/webm" />
-            <track
-              label="English"
-              kind="subtitles"
-              srclang="en"
-              src="media/gabe-en.vtt"
-              default />
-            <track
-              label="Español"
-              kind="subtitles"
-              srclang="es"
-              src="media/gabe-es.vtt"/>
-          </video>
+            <section>
+                <h2>iPhone 16</h2>
+                <img src="images/image5.webp" alt="iPhone 16" width="300" height="175" class="e2e">
+                <p>iPhone 16 is built for Apple Intelligence, the personal intelligence system that helps you write, express yourself, and get things done effortlessly. </p>
+                <a href="https://www.apple.com/iphone-16/">Learn More</a>
+            </section>
 
-          <details>
-            <summary>Video Transcript</summary>
-                <p>
-                    Hi there, so my name is Gabriel Bankhead and here is my 60 second video for the architecture website. In a business setting, this video would be geared towards showing my portfolio and introducing myself to the FIG company, but because this is just an assignment, I have nothing to show architecture related since I am not an architecture student. But at any rate, I also want to apologize for all of my assignments. being late. I have been sick and I wasn't able to do assignments for almost a week and then that really pushed things behind. So I apologize that up until now, all of my\
-assignments have been late. It's not normally that way, but I am trying to catch up. It's just happening very slowly. So thank you, Paul, for all of your patience and understanding when going through all of my assignments really late. But by the end of this week, I should be caught up and that\
-is the end of my 60 second clip, so thank you.
-                </p>
-          </details>
+            <section>
+                <img src="images/image1.webp" alt="Apple Watch Series 10" width="300" height="175">
+                <h2>Apple Watch Series 10</h2>
+                <p>Series 10 is a major milestone for Apple Watch. It features our biggest and most advanced display yet,2 showing more information onscreen than ever.</p>
+                <a href="https://www.apple.com/apple-watch-series-10/">Learn More</a>
+            </section>
+
+            <section>
+                <img src="images/image2.webp" alt="Apple Watch Ultra 2" width="300" height="175" class="e2e">
+                <h2>Apple Watch Ultra 2</h2>
+                <p>Featuring a stunning, new black titanium case, Apple Watch Ultra 2 is the ultimate sports and adventure watch. It has all the connectivity, health, and safety features for the everyday. And it takes training further with the most accurate GPS in a sports watch.1</p>
+                <a href="https://www.apple.com/apple-watch-ultra-2/">Learn More</a>
+            </section>
+
+            <section>
+                <img src="images/image3.webp" alt="AirPods 4" width="300" height="175">
+                <p>Personalized Spatial Audio with dynamic head tracking2 places sound all around you, creating a three-dimensional listening experience for music, TV shows, movies, games, and more.</p>
+                <a href="https://www.apple.com/airpods-4/">Learn More</a>
+            </section>
+
+        </div>
+      
 
     </main>
-</div>
+</div><!-- end main wrapper -->
     
 <div id="footerWrapper">
     <footer>
-        <p>Copyright &copy; 2025 Nexus Studios Inc. All rights reserved. 
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Clients</a></p>
+        <div>
+            <section class="contact">
+                <p><ion-icon name="person-circle-outline"></ion-icon>Tim Cook</p>
+                <p><ion-icon name="logo-apple"></ion-icon>Apple Inc.</p>
+                <p><ion-icon name="mail-open-outline"></ion-icon><a href="mailto:tim@apple.com">tim@apple.com</a></p>
+                <p><ion-icon name="globe-outline"></ion-icon><a href="https://www.apple.com/">Apple.com</a></p>
+                <p><ion-icon name="phone-portrait-outline"></ion-icon><a href="tel:8018637409">(801)-863-7409</a></p>
+            </section>
+            <section class="social">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-tiktok"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+            </section>
+            <section class="location">
+                <address>One Apple Park Way <br>Cupertino <br> CA 95014</address>
+            </section>
+        </div>
+
+        <p class="legal">&copy; 2024 &bull; Gabriel Bankhead</p>
     </footer>
-</div>
-   
+</div> <!-- end footer wrapper -->
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script src="js/scripts.js"></script>
+
 </body>
 </html> 
