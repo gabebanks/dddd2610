@@ -314,7 +314,7 @@ html {
 body {
   font-family: "Fjalla One", sans-serif;
   font-weight: 300;
-  min-width: 320px;
+  min-inline-size: 320px;
 }
 
 header {
@@ -330,8 +330,8 @@ header span {
   color: black;
 }
 header img {
-  width: 50px;
-  height: auto;
+  inline-size: 50px;
+  block-size: auto;
 }
 
 #theButton::before {
@@ -343,11 +343,11 @@ header img {
   background: none;
   font-size: 2rem;
   padding: 0;
-  width: 44px;
-  height: 44px;
+  inline-size: 44px;
+  block-size: 44px;
   position: absolute;
-  top: 0;
-  right: 0;
+  inset-block-start: 0;
+  inset-inline-end: 0;
   cursor: pointer;
 }
 
@@ -392,16 +392,16 @@ header img {
   position: relative;
 }
 .parentHero img {
-  width: 100%;
-  height: auto;
+  inline-size: 100%;
+  block-size: auto;
   display: block;
   margin: 0;
 }
 .parentHero p {
   position: absolute;
   margin: 0;
-  top: calc(50% - 35px);
-  width: 100%;
+  inset-block-start: calc(50% - 35px);
+  inline-size: 100%;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
   padding: 1rem;
   text-align: center;
@@ -429,7 +429,7 @@ div.cards {
   gap: 24px 8px;
 }
 div.cards p {
-  text-align: left;
+  text-align: start;
 }
 div.cards button {
   color: white;
@@ -448,13 +448,13 @@ div.cards section {
   text-align: center;
 }
 div.cards section img {
-  width: 50px;
+  inline-size: 50px;
   position: relative;
   justify-content: center;
 }
 div.cards .shape {
-  width: 50px;
-  height: 50px;
+  inline-size: 50px;
+  block-size: 50px;
   border-radius: 10px;
   border: black 1px solid;
   margin: auto;
@@ -474,23 +474,23 @@ div.cards .color:hover img {
 }
 @keyframes myBounce {
   0% {
-    bottom: 0px;
+    inset-block-end: 0px;
     animation-timing-function: ease-out;
   }
   25% {
-    bottom: 15px;
+    inset-block-end: 15px;
     animation-timing-function: ease-in;
   }
   50% {
-    bottom: 0px;
+    inset-block-end: 0px;
     animation-timing-function: ease-out;
   }
   75% {
-    bottom: 7px;
+    inset-block-end: 7px;
     animation-timing-function: ease-in;
   }
   100% {
-    bottom: 0px;
+    inset-block-end: 0px;
     animation-timing-function: ease-out;
   }
 }
@@ -564,7 +564,7 @@ footer a {
 div.reviewWrapper {
   background-color: rgb(247, 247, 247);
   padding: 1rem;
-  margin-top: 25px;
+  margin-block-start: 25px;
 }
 
 #cars {
@@ -579,7 +579,7 @@ div.reviewWrapper {
 }
 
 #final {
-  margin-left: 175px;
+  margin-inline-start: 175px;
   color: black;
   text-decoration: none;
 }

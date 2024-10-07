@@ -12,7 +12,7 @@ html {
 body {
     font-family: $defaultFont;
     font-weight: $lightWeight;
-    min-width: 320px;
+    min-inline-size: 320px;
 }
 
 header {
@@ -27,8 +27,8 @@ header {
         color: $primaryColor;
     }
     img {
-        width: 50px;
-        height: auto;
+        inline-size: 50px;
+        block-size: auto;
     }
 } 
 
@@ -40,11 +40,11 @@ header {
     background: none;
     font-size: 2rem;
     padding: 0;
-    width: 44px;
-    height: 44px;
+    inline-size: 44px;
+    block-size: 44px;
     position: absolute;
-    top: 0;
-    right: 0;
+    inset-block-start: 0;
+    inset-inline-end: 0;
     cursor: pointer;
 }
 #theNav ul {
@@ -83,8 +83,8 @@ header {
 .parentHero {
     position: relative;
     img {
-        width: 100%;
-        height: auto;
+        inline-size: 100%;
+        block-size: auto;
         display: block;
         margin: 0;
 
@@ -92,8 +92,8 @@ header {
     p {
         position: absolute;
         margin: 0;
-        top: calc(50% - 35px);
-        width: 100%;
+        inset-block-start: calc(50% - 35px);
+        inline-size: 100%;
         background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.9) 50%, rgba(255, 255,255,0) 100%);
         padding: 1rem;
         text-align: center;
@@ -122,7 +122,7 @@ div.cards {
     display: grid;
     grid-template-columns: repeat(autofit, minmax(230px, 1fr));
     gap: 24px 8px;
-    p {text-align: left;}
+    p {text-align: start;}
     button {
         color: white;
         background-color: black;
@@ -140,13 +140,13 @@ div.cards {
         text-align: center;
     }
     section img {
-        width: 50px;
+        inline-size: 50px;
         position: relative;
         justify-content: center;
     }
     .shape {
-        width: 50px;
-        height: 50px;
+        inline-size: 50px;
+        block-size: 50px;
         border-radius: 10px;
         border: black 1px solid;
         margin: auto;
@@ -158,11 +158,11 @@ div.cards {
     .color:hover img {animation: myColor 5s 3;}
         
         @keyframes myBounce {
-            0%  {bottom:0px; animation-timing-function:ease-out;}
-            25% {bottom:15px; animation-timing-function:ease-in;}
-            50% {bottom:0px; animation-timing-function:ease-out;}
-            75% {bottom:7px; animation-timing-function:ease-in;}
-            100% {bottom:0px; animation-timing-function:ease-out;}
+            0%  {inset-block-end:0px; animation-timing-function:ease-out;}
+            25% {inset-block-end:15px; animation-timing-function:ease-in;}
+            50% {inset-block-end:0px; animation-timing-function:ease-out;}
+            75% {inset-block-end:7px; animation-timing-function:ease-in;}
+            100% {inset-block-end:0px; animation-timing-function:ease-out;}
         }
         @keyframes mySpin {
             from {transform: rotate(0deg);}
@@ -202,7 +202,7 @@ footer {
 div.reviewWrapper {
 background-color: rgb(247, 247, 247);
 padding: 1rem;
-margin-top: 25px;
+margin-block-start: 25px;
 }
 #cars {
     display: grid;
@@ -214,4 +214,4 @@ margin-top: 25px;
 #cars p {
     padding: 0;
 }
-#final {margin-left: 175px; color: black; text-decoration: none;}
+#final {margin-inline-start: 175px; color: black; text-decoration: none;}
