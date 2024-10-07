@@ -317,10 +317,6 @@ body {
   min-width: 320px;
 }
 
-#headerWrapper {
-  border-bottom: 1px solid #ccc;
-}
-
 header {
   display: flex;
   grid-template-columns: 50px auto;
@@ -361,14 +357,15 @@ header img {
   padding: 0;
 }
 #theNav ul li a {
-  color: black;
+  color: white;
   display: block;
   padding: 0.75rem 10px;
   text-decoration: none;
-  border-bottom: 1px solid #ccc;
 }
 #theNav ul li.active a {
-  color: darkred;
+  color: black;
+  background-color: white;
+  text-decoration: none;
 }
 
 #theButton.open::before {
@@ -376,6 +373,9 @@ header img {
 }
 
 #theNav {
+  border: none;
+  color: white;
+  background-color: black;
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.5s ease-out;
@@ -395,6 +395,7 @@ header img {
   width: 100%;
   height: auto;
   display: block;
+  margin: 0;
 }
 .parentHero p {
   position: absolute;
@@ -440,7 +441,7 @@ div.cards section {
   background: rgba(226, 246, 253, 0.1);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  border: 1px solid darkgrey;
+  border: 1px solid lightgray;
   margin: 0;
   border-radius: 16px;
   padding: 1rem;
@@ -600,7 +601,7 @@ div.reviewWrapper {
   #theNav ul a:hover, #theNav ul.open a:hover {
     text-decoration: underline;
   }
-  #navWrapper {
+  #navWrapper ul {
     border-bottom: 1px solid #ccc;
   }
   div.cards {

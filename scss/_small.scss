@@ -15,7 +15,6 @@ body {
     min-width: 320px;
 }
 
-#headerWrapper {border-bottom: 1px solid $greyColor;}
 header {
     display: flex;
     grid-template-columns: 50px auto;
@@ -53,20 +52,24 @@ header {
     margin: 0;
     padding: 0;
     li a {
-        color: $primaryColor;
+        color: white;
         display: block;
         padding: .75rem $gutter;
         text-decoration: none;
-        border-bottom: 1px solid $greyColor;
     }
     li.active a {
-        color: $secondaryColor;
+        color: black;
+        background-color: white;
+        text-decoration: none;
     }
 }
 #theButton.open::before {
     content: "\2715"
 }
 #theNav {
+    border: none;
+    color: white;
+    background-color: black;
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.5s ease-out;
@@ -83,6 +86,8 @@ header {
         width: 100%;
         height: auto;
         display: block;
+        margin: 0;
+
     }
     p {
         position: absolute;
@@ -128,7 +133,7 @@ div.cards {
         background: rgba(226, 246, 253, 0.1);
         backdrop-filter: blur(10px);
         box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-        border: 1px solid darkgrey;
+        border: 1px solid lightgray;
         margin: 0;
         border-radius: 16px;
         padding: 1rem;
