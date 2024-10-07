@@ -1,33 +1,37 @@
-/* NAVIGATION STUFF GOES HERE  */
-div.allcards {
+#theButton {
+    display: none;
+}
+#theNav {
+    grid-template-rows: 1fr;
+}
+#theNav ul, #theNav ul.open {
     display: flex;
-    flex-wrap: wrap;
-    gap: $gutter;
-    section {
-        flex-basis: calc(50% - ($gutter/2))
+    li a {
+        padding: .4rem 1rem;
+        border: none;
+    }
+    a:hover {
+        text-decoration: underline;
     }
 }
-
-footer div {
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
+#navWrapper {
+    border-bottom: 1px solid $greyColor;
 }
-
-nav {
-    ul {
-        display: flex;
-        justify-content: flex-start;
-        column-gap: $gutter;
-    }
-    ul li a {
-        margin: 10px 0;
-    }
-    ul li a:hover {
-        text-decoration: underline 2px $accentColor;
-    }
-}
-
-section {
+div.cards {
     grid-template-columns: 1fr 1fr;
 }
+div.reviewWrapper {
+    grid-template-columns: 1fr 1fr;
+}
+#cars {
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+}
+#cars section {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.reviewWrapper {
+    h2 {margin: 20px}
+}
+#final {margin-left: auto;}

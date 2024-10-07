@@ -1,32 +1,26 @@
-/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
 
-/*  Apply a natural box layout model to all elements  */
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-} // end all elements
+} 
 
-
-/* --------------------------- BODY --------------------------- */
 body {
     font-family: $defaultFont;
     font-weight: $lightWeight;
     min-width: 320px;
 }
 
-
-/* --------------------------- HEADER --------------------------- */
 #headerWrapper {border-bottom: 1px solid $greyColor;}
 header {
-    display: grid;
+    display: flex;
     grid-template-columns: 50px auto;
     column-gap: $gutter;
-    align-items: center; //vertically
+    align-items: center; 
     padding: .5rem $gutter;
     span {
         font-size: 1.6rem;
@@ -37,79 +31,78 @@ header {
         width: 50px;
         height: auto;
     }
-} // end header
+} 
 
-
-/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-
-#navWrapper {
-    background-color: $primaryColor;
-}
-nav {
-    ul {
-        padding: 0;
-        margin: 0 $gutter;
-    }
-    ul li {
-        list-style-type: none;
-    }
-    ul li a {
-        color: $greyColor;
-        text-decoration: none;
-        display: block;
-        padding: .8rem $gutter;
-    }
-    ul li.active a {
-        background-color: #eee;
-        color: $primaryColor;
-    }
-}
-#myButton::before {
+#theButton::before {
     content: "\2630";
 }
-#myButton {
+#theButton {
     border: none;
     background: none;
-    color: white;
     font-size: 2rem;
     padding: 0;
     width: 44px;
     height: 44px;
-    font-weight: $lightWeight;
+    position: absolute;
+    top: 0;
+    right: 0;
     cursor: pointer;
 }
-ul.menuLinks {
+#theNav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: none;
     li a {
-        color: #fff;
+        color: $primaryColor;
         display: block;
         padding: .75rem $gutter;
         text-decoration: none;
+        border-bottom: 1px solid $greyColor;
     }
     li.active a {
-        background-color: #eee;
+        color: $secondaryColor;
     }
 }
-ul.open.menuLinks {
-    display: block;
-}x
-#myButton.open::before {
-    content: "x";
+#theButton.open::before {
+    content: "\2715"
 }
-ul.menuLinks a:hover {
-    background-color: #eee;
-    color: black;
-    text-decoration: none;
+#theNav {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease-out;
+    ul {
+        overflow: hidden;
+    }
 }
-/* --------------------------- MAIN --------------------------- */
+#theNav.open {
+    grid-template-rows: 1fr;
+}
+.parentHero {
+    position: relative;
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    p {
+        position: absolute;
+        margin: 0;
+        top: calc(50% - 35px);
+        width: 100%;
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.9) 50%, rgba(255, 255,255,0) 100%);
+        padding: 1rem;
+        text-align: center;
+        color: black;
+        font-weight: 900;
+        font-size: 2rem;
+    }
+}
+
 main {
     h1 {
         padding: 1rem $gutter.5rem $gutter;
         font-size: 1.5rem;
-        color: $primaryColor;
+        color: $secondaryColor;
         font-weight: $lightWeight
     }
     p {
@@ -117,93 +110,103 @@ main {
         color: #333;
         line-height: $leading;
     }
-}// end main
+}
 
-div.allcards {
-    padding: 0 $gutter;
-    section {
-        border: 1px solid rgb(0, 0, 0);
-        border-radius: 10px;
-        overflow: hidden;
-        margin: 1rem 0;
-        h2, p, img {
-            margin: 0;
-            padding: 1rem $gutter;
-        }
-        h2 {
-            background-color: rgb(0, 0, 0);
-            font-size: 1.5rem;
-            text-align: center;
-            color: White;
-
-        }
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        img.e2e {
-            padding: 0;
-        }
-        p {
-            font-style: italic;
-        }
-        a {
-            display: block;
-            background-color: #eee;
-            padding: 12px;
-            text-align: center;
-            margin: 0 3rem 1rem 3rem;
-            border-radius: 8px;
-            color: black;
-            text-decoration: none;
-        }
-    } //end of section
-} // end of allcards
-
-/* --------------------------- FOOTER --------------------------- */
-#footerWrapper {
-    background-color: $primaryColor
-} // end footer wrapper
-
-footer {
-    p.legal {
-        margin: 0;
-        font-weight: $lightWeight;
-        text-align: center;
+div.cards {
+    padding: 0 8px;
+    display: grid;
+    grid-template-columns: repeat(autofit, minmax(230px, 1fr));
+    gap: 24px 8px;
+    p {text-align: left;}
+    button {
+        color: white;
+        background-color: black;
+        padding: 10px;
+        border-radius: 8px;
     }
     section {
-        
-    } // end of section
-    section.contact {
-        p{font-size: 1.2rem; margin: .5rem;}
-        ion-icon {color: rgb(255, 255, 255); padding-right: 5px;}
-    } // end of contact
-    section.social {
-        display: flex;
+        background: rgba(226, 246, 253, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid darkgrey;
+        margin: 0;
+        border-radius: 16px;
+        padding: 1rem;
+        text-align: center;
+    }
+    section img {
+        width: 50px;
+        position: relative;
         justify-content: center;
-        a {display: block; 
-            border: solid 2px #939393; 
-            font-size: 2rem; 
-            margin: .5rem; 
-            padding: .5; 
-            border-radius: 6px; 
-            &:hover{
-                background-color: rgb(0, 72, 120);
-            }
+    }
+    .shape {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        border: black 1px solid;
+        margin: auto;
+        background-color: red;
+    }
+    .bounce:hover img {animation: myBounce 1s 1;}
+    .spin:hover img {animation: mySpin 1s 1;}
+    .pulse:hover img {animation: myPulse 1s 1;}
+    .color:hover img {animation: myColor 5s 3;}
+        
+        @keyframes myBounce {
+            0%  {bottom:0px; animation-timing-function:ease-out;}
+            25% {bottom:15px; animation-timing-function:ease-in;}
+            50% {bottom:0px; animation-timing-function:ease-out;}
+            75% {bottom:7px; animation-timing-function:ease-in;}
+            100% {bottom:0px; animation-timing-function:ease-out;}
         }
-        ion-icon {
-
+        @keyframes mySpin {
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
         }
+        @keyframes myPulse {
+            0% {transform: scale(1.0);}
+            25% {transform: scale(1.5);}
+            50% {transform: scale(0.75);}
+            75% {transform: scale(1.25);}
+            100% {transform: scale(1.0);}
+        }
+        @keyframes myColor {
+            0% {background-color: red;}
+            15% {background-color: orange;}
+            30% {background-color: yellow;}
+            45% {background-color: green;}
+            60% {background-color: blue;}
+            75% {background-color: indigo;}
+            90% {background-color: violet;}
+            100% {background-color: red;}
+        }
+}
 
-    } // end of social
-    section.location {
-        font-size: 1.5rem;
-    } // end of location
-    padding: 0.5rem $gutter;
-    color: $greyColor;
+#footerWrapper {
+    background-color: $primaryColor
+} 
+footer {
+    font-size: .85rem;
+    padding: 1rem $gutter;
+    color: white;
     text-align: center;
     line-height: $leading;
-    a {color: $greyColor;}
-    text-align: left;
-}// end footer
+    a {color: white;}
+}
+
+div.reviewWrapper {
+background-color: rgb(247, 247, 247);
+padding: 1rem;
+margin-top: 25px;
+}
+#cars {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 8px;
+    margin: 0;
+
+}
+#cars p {
+    padding: 0;
+}
+#final {margin-left: 175px; color: black; text-decoration: none;}

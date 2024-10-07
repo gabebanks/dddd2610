@@ -300,33 +300,29 @@ template {
   display: none;
 }
 
-/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
-/*  Apply a natural box layout model to all elements  */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* --------------------------- BODY --------------------------- */
 body {
-  font-family: "Fredoka", sans-serif;
+  font-family: "Fjalla One", sans-serif;
   font-weight: 300;
   min-width: 320px;
 }
 
-/* --------------------------- HEADER --------------------------- */
 #headerWrapper {
   border-bottom: 1px solid #ccc;
 }
 
 header {
-  display: grid;
+  display: flex;
   grid-template-columns: 50px auto;
   column-gap: 10px;
   align-items: center;
@@ -335,87 +331,88 @@ header {
 header span {
   font-size: 1.6rem;
   font-weight: 300;
-  color: #000000;
+  color: black;
 }
 header img {
   width: 50px;
   height: auto;
 }
 
-/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-#navWrapper {
-  background-color: #000000;
-}
-
-nav ul {
-  padding: 0;
-  margin: 0 10px;
-}
-nav ul li {
-  list-style-type: none;
-}
-nav ul li a {
-  color: #ccc;
-  text-decoration: none;
-  display: block;
-  padding: 0.8rem 10px;
-}
-nav ul li.active a {
-  background-color: #eee;
-  color: #000000;
-}
-
-#myButton::before {
+#theButton::before {
   content: "☰";
 }
 
-#myButton {
+#theButton {
   border: none;
   background: none;
-  color: white;
   font-size: 2rem;
   padding: 0;
   width: 44px;
   height: 44px;
-  font-weight: 300;
+  position: absolute;
+  top: 0;
+  right: 0;
   cursor: pointer;
 }
 
-ul.menuLinks {
+#theNav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: none;
 }
-ul.menuLinks li a {
-  color: #fff;
+#theNav ul li a {
+  color: black;
   display: block;
   padding: 0.75rem 10px;
   text-decoration: none;
+  border-bottom: 1px solid #ccc;
 }
-ul.menuLinks li.active a {
-  background-color: #eee;
+#theNav ul li.active a {
+  color: darkred;
 }
 
-ul.open.menuLinks {
+#theButton.open::before {
+  content: "✕";
+}
+
+#theNav {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s ease-out;
+}
+#theNav ul {
+  overflow: hidden;
+}
+
+#theNav.open {
+  grid-template-rows: 1fr;
+}
+
+.parentHero {
+  position: relative;
+}
+.parentHero img {
+  width: 100%;
+  height: auto;
   display: block;
 }
-
-x #myButton.open::before {
-  content: "x";
-}
-
-ul.menuLinks a:hover {
-  background-color: #eee;
+.parentHero p {
+  position: absolute;
+  margin: 0;
+  top: calc(50% - 35px);
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+  padding: 1rem;
+  text-align: center;
   color: black;
-  text-decoration: none;
+  font-weight: 900;
+  font-size: 2rem;
 }
 
-/* --------------------------- MAIN --------------------------- */
 main h1 {
   padding: 1rem 10px 0.5rem 10px;
   font-size: 1.5rem;
-  color: #000000;
+  color: darkred;
   font-weight: 300;
 }
 main p {
@@ -424,122 +421,207 @@ main p {
   line-height: 150%;
 }
 
-div.allcards {
-  padding: 0 10px;
+div.cards {
+  padding: 0 8px;
+  display: grid;
+  grid-template-columns: repeat(autofit, minmax(230px, 1fr));
+  gap: 24px 8px;
 }
-div.allcards section {
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 1rem 0;
+div.cards p {
+  text-align: left;
 }
-div.allcards section h2, div.allcards section p, div.allcards section img {
+div.cards button {
+  color: white;
+  background-color: black;
+  padding: 10px;
+  border-radius: 8px;
+}
+div.cards section {
+  background: rgba(226, 246, 253, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid darkgrey;
   margin: 0;
-  padding: 1rem 10px;
-}
-div.allcards section h2 {
-  background-color: rgb(0, 0, 0);
-  font-size: 1.5rem;
+  border-radius: 16px;
+  padding: 1rem;
   text-align: center;
-  color: White;
 }
-div.allcards section img {
-  width: 100%;
-  height: auto;
-  display: block;
+div.cards section img {
+  width: 50px;
+  position: relative;
+  justify-content: center;
 }
-div.allcards section img.e2e {
+div.cards .shape {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: black 1px solid;
+  margin: auto;
+  background-color: red;
+}
+div.cards .bounce:hover img {
+  animation: myBounce 1s 1;
+}
+div.cards .spin:hover img {
+  animation: mySpin 1s 1;
+}
+div.cards .pulse:hover img {
+  animation: myPulse 1s 1;
+}
+div.cards .color:hover img {
+  animation: myColor 5s 3;
+}
+@keyframes myBounce {
+  0% {
+    bottom: 0px;
+    animation-timing-function: ease-out;
+  }
+  25% {
+    bottom: 15px;
+    animation-timing-function: ease-in;
+  }
+  50% {
+    bottom: 0px;
+    animation-timing-function: ease-out;
+  }
+  75% {
+    bottom: 7px;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    bottom: 0px;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes mySpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes myPulse {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(0.75);
+  }
+  75% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes myColor {
+  0% {
+    background-color: red;
+  }
+  15% {
+    background-color: orange;
+  }
+  30% {
+    background-color: yellow;
+  }
+  45% {
+    background-color: green;
+  }
+  60% {
+    background-color: blue;
+  }
+  75% {
+    background-color: indigo;
+  }
+  90% {
+    background-color: violet;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+#footerWrapper {
+  background-color: black;
+}
+
+footer {
+  font-size: 0.85rem;
+  padding: 1rem 10px;
+  color: white;
+  text-align: center;
+  line-height: 150%;
+}
+footer a {
+  color: white;
+}
+
+div.reviewWrapper {
+  background-color: rgb(247, 247, 247);
+  padding: 1rem;
+  margin-top: 25px;
+}
+
+#cars {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 8px;
+  margin: 0;
+}
+
+#cars p {
   padding: 0;
 }
-div.allcards section p {
-  font-style: italic;
-}
-div.allcards section a {
-  display: block;
-  background-color: #eee;
-  padding: 12px;
-  text-align: center;
-  margin: 0 3rem 1rem 3rem;
-  border-radius: 8px;
+
+#final {
+  margin-left: 175px;
   color: black;
   text-decoration: none;
 }
 
-/* --------------------------- FOOTER --------------------------- */
-#footerWrapper {
-  background-color: #000000;
-}
-
-footer {
-  padding: 0.5rem 10px;
-  color: #ccc;
-  text-align: center;
-  line-height: 150%;
-  text-align: left;
-}
-footer p.legal {
-  margin: 0;
-  font-weight: 300;
-  text-align: center;
-}
-footer section.contact p {
-  font-size: 1.2rem;
-  margin: 0.5rem;
-}
-footer section.contact ion-icon {
-  color: rgb(255, 255, 255);
-  padding-right: 5px;
-}
-footer section.social {
-  display: flex;
-  justify-content: center;
-}
-footer section.social a {
-  display: block;
-  border: solid 2px #939393;
-  font-size: 2rem;
-  margin: 0.5rem;
-  padding: 0.5;
-  border-radius: 6px;
-}
-footer section.social a:hover {
-  background-color: rgb(0, 72, 120);
-}
-footer section.location {
-  font-size: 1.5rem;
-}
-footer a {
-  color: #ccc;
-}
-
 @media only screen and (min-width: 35rem) {
-  /* NAVIGATION STUFF GOES HERE  */
-  div.allcards {
+  #theButton {
+    display: none;
+  }
+  #theNav {
+    grid-template-rows: 1fr;
+  }
+  #theNav ul, #theNav ul.open {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
   }
-  div.allcards section {
-    flex-basis: calc(50% - 5px);
+  #theNav ul li a, #theNav ul.open li a {
+    padding: 0.4rem 1rem;
+    border: none;
   }
-  footer div {
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
+  #theNav ul a:hover, #theNav ul.open a:hover {
+    text-decoration: underline;
   }
-  nav ul {
-    display: flex;
-    justify-content: flex-start;
-    column-gap: 10px;
+  #navWrapper {
+    border-bottom: 1px solid #ccc;
   }
-  nav ul li a {
-    margin: 10px 0;
-  }
-  nav ul li a:hover {
-    text-decoration: underline 2px #3990c3;
-  }
-  section {
+  div.cards {
     grid-template-columns: 1fr 1fr;
+  }
+  div.reviewWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  #cars {
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+  }
+  #cars section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .reviewWrapper h2 {
+    margin: 20px;
+  }
+  #final {
+    margin-left: auto;
   }
 }
 @media only screen and (min-width: 64rem) {
@@ -547,28 +629,7 @@ footer a {
     max-width: 960px;
     margin: auto;
   }
-  div.allcards section {
-    flex-basis: calc(33.333% - 6.6666666667px);
-  }
-  /* NAVIGATION STUFF GOES HERE  */
-  footer div {
-    display: grid;
-    grid-template-columns: auto auto auto;
-  }
-  #myButton {
-    display: none;
-  }
-  ul.menuLinks li a {
-    padding: 0.75rem 1rem;
-    margin: 0;
-  }
-  ul.menuLinks, ul.menuLinks.open {
-    display: flex;
-    justify-content: flex-end;
-  }
-  ul.menuLinks a:hover {
-    background-color: #eee;
-    color: black;
-    text-decoration: none;
+  div.cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }/*# sourceMappingURL=styles.css.map */
