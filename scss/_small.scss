@@ -214,4 +214,13 @@ margin-block-start: 25px;
 #cars p {
     padding: 0;
 }
-#final {margin-inline-start: 175px; color: black; text-decoration: none;}
+#final {top: right;}
+
+#final a {
+    color: black;
+    text-decoration: none;
+}
+#final a:hover{
+    color: darkred;
+    text-decoration: underline;
+}

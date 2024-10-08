@@ -579,9 +579,17 @@ div.reviewWrapper {
 }
 
 #final {
-  margin-inline-start: 175px;
+  top: right;
+}
+
+#final a {
   color: black;
   text-decoration: none;
+}
+
+#final a:hover {
+  color: darkred;
+  text-decoration: underline;
 }
 
 @media only screen and (min-width: 35rem) {
