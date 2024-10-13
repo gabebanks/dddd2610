@@ -8,3 +8,5 @@ header, nav, main {
     $w: calc($i /12) * 100%;
     .large-#{$i} {flex-basis: $w;}
 }
+
+//end of page

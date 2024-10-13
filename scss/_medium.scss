@@ -29,3 +29,5 @@ header {grid-template-columns: 50px auto auto;}
     $w: calc($i /12) * 100%;
     .medium-#{$i} {flex-basis: $w;}
 }
+
+//end of page
