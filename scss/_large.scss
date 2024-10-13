@@ -2,6 +2,9 @@ header, nav, main {
     max-width: 960px;
     margin: auto;
 }
-div.cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+/* NAVIGATION STUFF GOES HERE  */
+@for $i from 1 through 12 {
+    $w: calc($i /12) * 100%;
+    .large-#{$i} {flex-basis: $w;}
 }

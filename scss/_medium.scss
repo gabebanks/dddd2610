@@ -1,37 +1,31 @@
-#theButton {
+/* NAVIGATION STUFF GOES HERE  */
+#primaryNav button {
     display: none;
 }
-#theNav {
-    grid-template-rows: 1fr;
-}
-#theNav ul, #theNav ul.open {
+header {grid-template-columns: 50px auto auto;}
+#primaryNav ul, #primaryNav ul.open {
     display: flex;
+    justify-content: flex-end;
+    width: auto;
+    position: static;
+    border: none;
+    box-shadow: none;
     li a {
         padding: .4rem 1rem;
-        border: none;
     }
     a:hover {
-        text-decoration: underline;
+        text-decoration: underline 4px $primaryColor;
+    }
+    li.active a {
+        text-decoration: none;
     }
 }
-#navWrapper ul{
-    border-bottom: 1px solid $greyColor;
+
+#primaryNav a.active:hover {
+    text-decoration: none; 
+  }
+
+@for $i from 1 through 12 {
+    $w: calc($i /12) * 100%;
+    .medium-#{$i} {flex-basis: $w;}
 }
-div.cards {
-    grid-template-columns: 1fr 1fr;
-}
-div.reviewWrapper {
-    grid-template-columns: 1fr 1fr;
-}
-#cars {
-    grid-template-columns: 1fr 1fr;
-    margin: 0;
-}
-#cars section {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.reviewWrapper {
-    h2 {margin: 20px}
-}
-#final {margin-left: auto;}
