@@ -9,13 +9,15 @@ html {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-} 
+} // end all elements
+
 
 /* --------------------------- BODY --------------------------- */
 body {
     font-family: $defaultFont;
-    font-weight: $lightWeight;
+    font-weight: $normalWeight;
     min-width: 320px;
+    display: grid;
 }
 
 /* --------------------------- HEADER --------------------------- */
@@ -24,93 +26,189 @@ header {
     display: grid;
     grid-template-columns: 50px auto 44px;
     column-gap: $gutter;
-    align-items: center; //vertically
+    align-items: center; 
     padding: .5rem $gutter;
     span {
         font-size: 1.6rem;
         font-weight: bold;
         color: $primaryColor;
     }
-    img {
-        width: 50px;
-        height: auto;
-    }
+    img {height: 50px;}
 } 
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-#primaryNav button::before {
-    content: "\2630";
+
+div#navWrapper {
+    grid-row-start: 4;
+    background-color: $greyColor;
 }
 
-#primaryNav button {
-    border: none;
-    background: none;
-    font-size: 2rem;
-    padding: 0;
-    width: 44px;
-    height: 44px;
-}
-
-#primaryNav ul {
-    position: absolute;
-    right: $gutter;
-    width: 200px;
-    background-color: #fff;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-shadow: 0 0 10px #aaa;
+#top a, #navlinks > a {
+    display: block;
     text-align: right;
-
-    display: none;
-}
-
-li a {
-    color: $primaryColor;
-    display: block;
-    padding: .75rem $gutter;
+    font-size: 1.6rem;
+    height: 44px;
     text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
 
-li.active a {
-    background-color: $secondaryColor;
-    color: white;
-    font-weight: $normalWeight;
+#top a {
+    font-size: 2rem;
 }
 
-#primaryNav button.open::before {
-    content: "\2715";
+#navlinks > a {
+    padding: 15px 13px 0 0;
 }
 
-#primaryNav ul.open {
-    display: block;
+nav {
+    height: 100vh;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li a {
+        display: block;
+        color: black;
+        padding: .9rem 2vw;
+        text-decoration: none;
+        text-align: right;
+        border-bottom: 1px solid $greyColor;
+        font-weight: 500;
+    }
+    li.active a {
+        background-color: $secondaryColor;
+        color: white;
+    }
+}
+
+form.my-form {
+    padding-left: 1.2rem;
+    margin: 1rem $gutter;
+    label {
+        display: block;
+        color: black;
+        padding-top: .2rem;
+    }
+    h3 {
+        color: $secondaryColor;
+        margin: 1.5rem 0 .2rem 0;
+        border-bottom: 1px solid #eee;
+    }
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    select {
+        display: block;
+        margin: .1rem 0 1rem 0;
+        border: 1px solid #999;
+        border-radius: 6px;
+        border-left-width: 5px;
+        border-left-color: #555;
+        font-size: 1rem;
+        color: black;
+        width: 250px;
+        padding: .5rem $gutter;
+    }
+
+    input:required {border-left-color: red;}
+    input:focus{border-left-color: grey;}
+    input:required:valid{border-left-color:green;}
+
+    .condition:required {border-left-color: red;}
+
+    input[type="submit"] {
+        border: none;
+        background-color: $secondaryColor;
+        color: white;
+        border-radius: 6px;
+        padding: .75rem 1.5rem;
+        margin: 30px 0;
+        width: 250px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: white;
+        color: $secondaryColor;
+        border: 2px solid $secondaryColor;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
 }
 
 /* --------------------------- MAIN --------------------------- */
 main {
     h1 {
-        padding: 1rem $gutter.5rem $gutter;
-        margin-left: 10px;
-        margin-top: 40px;
+        margin-top: 50px;
+        padding-left: 1.2rem;
         font-size: 1.5rem;
-        color: $secondaryColor;
-        font-weight: bold;
+        color: $primaryColor;
+        font-weight: bold
     }
     p {
         padding: .5rem $gutter;
         color: #333;
         line-height: $leading;
     }
+}// end main
+
+.welcome {
+    text-align: center;
 }
 
-/* ---------------------------  STYLING THE ROWS & COLUMN --------------------------- */
-
-main img {
+img {
     width: 100%;
     height: auto;
+    margin: 0;
+    padding: 10px;
+}
 
+@for $i from 1 through 12 {
+    $w: calc($i /12) * 100%;
+    .small-#{$i} {flex-basis: $w;}
+}
+
+.parentHero {
+    position: relative;
+    img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        filter: blur(10px);
+        clip-path: inset(0);
+        box-shadow: inset 20px rgba(0,0,0,1);        
+
+    }
+    p {
+        position: absolute;
+        margin: 0;
+        inset-block-start: calc(60% - 35px);
+        inline-size: 100%;
+        padding: 1rem;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-weight: normal;
+        font-size: 1rem;
+    }
+    h1 {
+        position: absolute;
+        margin: 0;
+        inset-block-start: calc(40% - 35px);
+        inline-size: 100%;
+        padding: 1rem;
+        text-align: center;
+        color: white;
+        font-weight: 900;
+        font-size: 2rem;
+    }
 }
 
 .row {
@@ -118,7 +216,7 @@ main img {
     flex-wrap: wrap;
     justify-content: center;
     margin: 1rem 0;
-    padding: 0 8px;
+    padding: 0;
     //border: greenyellow solid 1px;
 }
 
@@ -128,58 +226,10 @@ main img {
     margin: 8px 0;
 }
 
-.fix {
-    padding: 0 8px;
-}
-
-.wow section {
-    background-color: $primaryColor;
-    color: white;
-    padding: 10px;
-    font-weight: $lightWeight;
-}
-.wow p {
-    color: white;
-}
-.wow img {
-    width: 100%;
-    height: auto;
-    border-radius: 2px;
-}
-
-h1 {
-    padding: 10px;
-}
-/* --------------------------- CREATE FOR LOOP --------------------------- */
-
-@for $i from 1 through 12 {
-    $w: calc($i /12) * 100%;
-    .small-#{$i} {flex-basis: $w;}
-}
-
-/* --------------------------- CSS CLASSES --------------------------- */
-
-.line, .round, .fill, .shadow {padding: 8px 8px;}
-.line {border: 1px solid #bbb;}
-.round {border-radius: 9px;}
-.fill {background-color: #eee;}
-.shadow {box-shadow: 0 0 10px #aaa;}
-
-/* ----------------------- CHECK IT OUT BUTTON ------------------ */
-
-.checkItout {
-background-color: $primaryColor;
- color: white;
- border-radius: 4px;
- padding: 5px;
- margin: 8px;
- margin-top: 0;
-}
-
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
     background-color: $primaryColor
-} 
+} // end footer wrapper
 
 footer {
     font-size: .85rem;
@@ -188,4 +238,4 @@ footer {
     text-align: center;
     line-height: $leading;
     a {color: $greyColor;}
-} //end of small
+}// end footer

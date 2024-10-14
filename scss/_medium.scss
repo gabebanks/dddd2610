@@ -1,33 +1,44 @@
 /* NAVIGATION STUFF GOES HERE  */
-#primaryNav button {
-    display: none;
-}
-header {grid-template-columns: 50px auto auto;}
-#primaryNav ul, #primaryNav ul.open {
-    display: flex;
-    justify-content: flex-end;
-    width: auto;
-    position: static;
-    border: none;
-    box-shadow: none;
-    li a {
-        padding: .4rem 1rem;
-    }
-    a:hover {
-        text-decoration: underline 4px $primaryColor;
-    }
-    li.active a {
-        text-decoration: none;
-    }
+
+body {
+    display: block;
 }
 
-#primaryNav a.active:hover {
-    text-decoration: none; 
-  }
+#top a, #navlinks > a {
+    display: none;
+}
 
 @for $i from 1 through 12 {
     $w: calc($i /12) * 100%;
     .medium-#{$i} {flex-basis: $w;}
 }
 
-//end of page
+nav {
+    height: auto;
+    border-bottom: 1px solid $greyColor;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    li a {
+        border: none;
+    }
+    li a:hover {
+        background-color: #acacac;
+    }
+    li.active a:hover {
+        text-decoration: none;
+        background-color: $secondaryColor;
+        color: white;
+    }
+}
+
+.parentHero {
+    h1 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+}
