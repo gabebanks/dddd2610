@@ -3,118 +3,111 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Utah Valley University</title>
+	<title>Video Styles 2024</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/styles.min.css">
 
+<!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-<div id="headerWrapper">
-	<header id="top">
-        <img src="logo1x.png" srcset="logo2x.png 2x, logo3x.png 3x" alt="Logo"/>
-		<span>Utah Valley University</span>
-        <a href="#navlinks">&#9776;</a>
-	</header>
-</div><!-- end header wrapper -->
-
+    <div id="headerWrapper">
+        <header>
+            <img src="logo1x.png" srcset="logo2x.png 2x, logo3x.png 3x" alt="Logo"/>
+            <div>
+                <span>Video Styles 2024</span>
+                <p class="slogan">Capturing Moments, Creating Memories</p>
+            </div>
+            <div id="hamburgerBtn">
+                <span class="top"></span>
+                <span class="bottom"></span>
+            </div>
+        </header>
+    </div>
     
     
 <div id="navWrapper">
-    <nav id="navlinks">
-        <a href="#top">&#10005;</a>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Campus Life</a></li>
-            <li class="active"><a href="#">Admissions</a></li>
-            <li><a href="#">Visitors</a></li>
-            <li><a href="#">Alumni</a></li>
-            <li><a href="#">Give</a></li>
-            <li><a href="#">About</a></li>
+    <nav>
+        <ul id="primaryNav">
+            <li><a href="#">Tickets</a></li>
+            <li><a href="#">Dates</a></li>
+            <li class="active"><a href="#">Speakers</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 </div> <!-- end nav wrapper -->
 
 <div id="mainWrapper">
     <main>
+        <div class="hero">
+        <video autoplay muted playsinline loop width="800" height="300">
+            <source src="/media/hero-video-hb.webm" type="video/webm" />
+            <source src="/media/hero-video-hb.mp4" type="video/mp4" />
+        </video>
+        <div>
+            <h3>Videography Styles</h3>
+            <p>Learn From The Master</p>
+        </div>
+        </div>
+        <h1>Our Guest Speakers</h1>
+        <p>We are excited to welcome a diverse lineup of guest speakers who will share their expertise and insights during our upcoming event. Each speaker brings a unique perspective, ranging from industry veterans with decades of experience to innovative newcomers who are shaping the future of their fields. With backgrounds in videography, storytelling, and creative direction, our speakers are committed to inspiring and educating attendees through engaging presentations and dynamic discussions. Join us as we explore the art of visual storytelling and learn from the best in the business!</p>
 
-        <h1>Admissions</h1> 
-        
-        <div class="row">
-            <div class="column small-12 medium-4 large-5">
-                <section>
-                    <p>Utah Valley University is an open-admissions university, and there is a place for you here. Applying to UVU is simple and straightforward so you can start your college career without going through all the hoops.</p>
-
-            </section>
+        <div class="allcards">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/fakeGuy1.webp" alt="Photographer" width="500" height="500">
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Ethan Carter</h2>
+                        <p>Ethan is a Los Angeles-based videographer known for his cinematic storytelling and innovative visuals. With over 8 years of experience, he brings brands and personal projects to life with creativity and precision.</p>
+                    </div>
+                </div>
             </div>
-            <div class="column small-12 medium-8 large-7">
-                <section>
-                    <img src="images/home_about.png" alt="home" width="736" height="371">
-            </section>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/fakeGuy2.webp" alt="Photographer" width="500" height="500">
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Lucas Kim</h2>
+                        <p>Lucas is a freelance videographer who specializes in minimalist, emotionally-driven video work. His projects span across non-profits, startups, and creative storytelling with a documentary-style approach.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/fakeGuy3.webp" alt="Photographer" width="500" height="500">
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Liam Thompson</h2>
+                        <p>Liam is a content creator known for his work in lifestyle videography and social media commercials. He blends creativity and strategy to help brands engage audiences through powerful visual narratives.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <form method="GET" action="thanks.html" class="my-form" autocomplete="on">
-            <h3>Personal Information</h3>
-            <label>First Name <input type="text" name="fname" autocomplete="given-name" required title="First Name Here"></label>
-            <label>Last Name <input type="text" name="lname" autocomplete="family-name" required title="Last Name Here"></label>
-            <label>Personal Email <input type="email" name="email" autocomplete="email" required title="Your Email"></label>
-            <label>Phone Number <input type="tel" name="phone" autocomplete="tel" required title="Phone Here"></label>
-
-                <label for="street-address">Street Address<input type="text" id="street-address" name="street-address" autocomplete="address-level4"></label>
-                <label for="city">City<input type="text" id="city" name="city" autocomplete="address-level2"></label>
-                <label for="state">State/Province<input type="text" id="state" name="state" autocomplete="address-level1"></label>
-                <label for="postal-code">Zip Code<input type="text" id="postal-code" name="postal-code" autocomplete="postal-code"></label>
-
-
-            <h3>Past Education</h3>
-            <label for="student-condition">What Type of Student?</label>
-            <select name="condition" id="student-condition" required>
-                <option value="" disabled selected>Please Select</option>
-                <option value="undergraduate">New Undergraduate Student</option>
-                <option value="graduate">Graduate Student</option>
-                <option value="returning">Returning Student</option>
-                <option value="ce">Concurrent Enrollment</option>
-                <option value="non-degree">Non-Degree Seeking</option>
-                <option value="international">International Student</option>
-            </select>
-            
-            <label for="graduation-date">Graduation Date<input type="date" id="graduation-date" name="graduation-date"></label>
-
-            <h3>Declare Your College</h3>
-            <label><input type="radio" name="college" value="CHPS"> College of Health & Public Service</label>
-            <label><input type="radio" name="college" value="CHSS"> College of Humanities & Social Sciences</label>
-            <label><input type="radio" name="college" value="COS"> College of Science</label>
-            <label><input type="radio" name="college" value="SOE"> School of education</label>
-            <label><input type="radio" name="college" value="SOA"> School of the Arts</label>
-            <label><input type="radio" name="college" value="SCET"> Smith College of Engineering & Technology</label>
-            <label><input type="radio" name="college" value="WSB"> Woodbury School of Business</label>
-
-            <h3>Communication Preference</h3>
-            <label><input type="checkbox" name="Financial Aid"> Text Message Updates</label>
-            <label><input type="checkbox" name="Scholarships"> Email Updates</label>
-            <label><input type="checkbox" name="Academic Advising"> Mail Updates</label>
-
-            <h3>Account Information</h3>
-            <label>Username (5-10 upper/lowercase letters)<input type="text" required pattern="[A-Za-z]{5,10}" title="Username must have 5-10 upper or lowercase letters."></label>
-            <label>Password (6 or more characters) <input type="password" name="password" required minlength="6" title="Password must have 6 Characters or more."></label>
-
-            <input type="submit" value="Send Application">
-        </form>
 
     </main>
 </div><!-- end main wrapper -->
     
 <div id="footerWrapper">
     <footer>
-        <p>Copyright &copy; 2025 Gabriel Bankhead. All rights reserved. 
+        <p>Copyright &copy; 2025 Gabriel Bankhead Inc. All rights reserved. 
             <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Clients</a></p>
     </footer>
 </div> <!-- end footer wrapper -->
-   
+   <script src="js/scripts.js"></script>
 </body>
 </html> 

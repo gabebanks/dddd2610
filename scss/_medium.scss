@@ -1,44 +1,20 @@
 /* NAVIGATION STUFF GOES HERE  */
-
-body {
-    display: block;
-}
-
-#top a, #navlinks > a {
-    display: none;
-}
-
-@for $i from 1 through 12 {
-    $w: calc($i /12) * 100%;
-    .medium-#{$i} {flex-basis: $w;}
-}
-
+#hamburgerBtn {display: none;}
+#primaryNav {display: flex;}
 nav {
-    height: auto;
-    border-bottom: 1px solid $greyColor;
-    ul {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    li a {
+    ul li a {
         border: none;
+        font-size: .85rem;
+        font-weight: $normalWeight;
+        padding: .5rem 1.2rem;
+        transition: background 0.25s linear;
     }
-    li a:hover {
-        background-color: #acacac;
-    }
-    li.active a:hover {
-        text-decoration: none;
-        background-color: $secondaryColor;
+    ul li a:hover {
+        background-color: $primaryColor;
         color: white;
     }
 }
+.allcards {
+    grid-template-columns: 1fr 1fr;
 
-.parentHero {
-    h1 {
-        font-size: 2.5rem;
-    }
-    p {
-        font-size: 1.5rem;
-    }
 }

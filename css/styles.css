@@ -314,149 +314,211 @@ html {
 
 /* --------------------------- BODY --------------------------- */
 body {
-  font-family: "Rajdhani", sans-serif;
-  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
   min-width: 320px;
-  display: grid;
 }
 
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid #ccc; /* Ensure $greyColor is defined */
 }
 
 header {
   display: grid;
   grid-template-columns: 50px auto 44px;
-  column-gap: 10px;
-  align-items: center;
+  column-gap: 10px; /* Ensure $gutter is defined */
+  align-items: center; /* Vertically center align */
   padding: 0.5rem 10px;
 }
-header span {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #275D38;
-}
+
 header img {
-  height: 50px;
+  width: 50px; /* Image size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+header span {
+  font-size: 1.6rem; /* Company name font size */
+  font-weight: bold; /* Make it bold */
+  display: block; /* Makes the span a block element */
+  color: #1d467c; /* Ensure $primaryColor is defined */
+}
+
+.slogan {
+  font-size: 12px; /* Font size for the slogan */
+  color: #1d467c; /* Adjust color if needed */
+  margin: 0; /* Remove default margin */
 }
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-div#navWrapper {
-  grid-row-start: 4;
-  background-color: #f2f2f2;
-}
-
-#top a, #navlinks > a {
-  display: block;
-  text-align: right;
-  font-size: 1.6rem;
+#hamburgerBtn {
+  position: relative;
   height: 44px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  width: 44px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+#hamburgerBtn .top, #hamburgerBtn .bottom {
+  position: absolute;
+  height: 2px;
+  width: 50%;
+  left: 25%;
+  background-color: #777;
+  transition: all 0.3s ease;
+}
+#hamburgerBtn .top {
+  top: 33%;
+}
+#hamburgerBtn .bottom {
+  top: 62%;
 }
 
-#top a {
-  font-size: 2rem;
+#hamburgerBtn.open .top {
+  transform: rotate(45deg);
+  top: 48%;
+  width: 60%;
+  left: 20%;
+}
+#hamburgerBtn.open .bottom {
+  transform: rotate(-45deg);
+  top: 48%;
+  width: 60%;
+  left: 20%;
 }
 
-#navlinks > a {
-  padding: 15px 13px 0 0;
-}
-
-nav {
-  height: 100vh;
-}
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: none;
 }
-nav li a {
+nav ul li a {
+  color: #1d467c;
   display: block;
-  color: black;
-  padding: 0.9rem 2vw;
+  padding: 0.75rem 10px;
   text-decoration: none;
-  text-align: right;
-  border-bottom: 1px solid #f2f2f2;
-  font-weight: 500;
+  border-bottom: 1px solid #ccc;
 }
-nav li.active a {
-  background-color: #78BE1F;
-  color: white;
+nav ul li.active a {
+  color: #1d467c;
 }
 
-form.my-form {
-  padding-left: 1.2rem;
-  margin: 1rem 10px;
-}
-form.my-form label {
+nav ul.open {
   display: block;
-  color: black;
-  padding-top: 0.2rem;
 }
-form.my-form h3 {
-  color: #78BE1F;
-  margin: 1.5rem 0 0.2rem 0;
-  border-bottom: 1px solid #eee;
+
+.hero {
+  position: relative;
 }
-form.my-form input[type=text],
-form.my-form input[type=tel],
-form.my-form input[type=number],
-form.my-form input[type=email],
-form.my-form input[type=password],
-form.my-form input[type=date],
-form.my-form select {
-  display: block;
-  margin: 0.1rem 0 1rem 0;
-  border: 1px solid #999;
-  border-radius: 6px;
-  border-left-width: 5px;
-  border-left-color: #555;
-  font-size: 1rem;
-  color: black;
-  width: 250px;
-  padding: 0.5rem 10px;
-}
-form.my-form input:required {
-  border-left-color: red;
-}
-form.my-form input:focus {
-  border-left-color: grey;
-}
-form.my-form input:required:valid {
-  border-left-color: green;
-}
-form.my-form .condition:required {
-  border-left-color: red;
-}
-form.my-form input[type=submit] {
-  border: none;
-  background-color: #78BE1F;
+.hero div {
+  position: absolute;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 14%, rgba(0, 0, 0, 0.8155637255) 40%, rgba(0, 0, 0, 0) 100%);
+  top: 0%;
+  left: 0;
+  right: 0;
   color: white;
-  border-radius: 6px;
-  padding: 0.75rem 1.5rem;
-  margin: 30px 0;
-  width: 250px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  padding-top: 15px;
+  padding-left: 15px;
 }
-form.my-form input[type=submit]:hover {
-  background-color: white;
-  color: #78BE1F;
-  border: 2px solid #78BE1F;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
+.hero div h3 {
+  text-shadow: 0 0 2px #000;
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+}
+.hero div p {
+  text-shadow: 0 0 2px #000;
+  color: white;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  font-weight: lighter;
+}
+.hero video {
+  width: 100%;
+  height: auto;
+}
+
+.allcards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px; /* Ensure this variable is defined in your code */
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px; /* Perspective for 3D effect */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0; /* Set border radius to 0 */
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back h2 {
+  margin: 0;
+  color: white;
+  padding: 10px;
+}
+
+.flip-card-back p {
+  font-size: 14px;
+  color: white;
+  padding: 10px;
 }
 
 /* --------------------------- MAIN --------------------------- */
 main h1 {
-  margin-top: 50px;
-  padding-left: 1.2rem;
+  padding: 1rem 10px 0.5rem 10px;
   font-size: 1.5rem;
-  color: #275D38;
+  color: #1d467c;
   font-weight: bold;
 }
 main p {
@@ -465,198 +527,43 @@ main p {
   line-height: 150%;
 }
 
-.welcome {
-  text-align: center;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 10px;
-}
-
-.small-1 {
-  flex-basis: 8.3333333333%;
-}
-
-.small-2 {
-  flex-basis: 16.6666666667%;
-}
-
-.small-3 {
-  flex-basis: 25%;
-}
-
-.small-4 {
-  flex-basis: 33.3333333333%;
-}
-
-.small-5 {
-  flex-basis: 41.6666666667%;
-}
-
-.small-6 {
-  flex-basis: 50%;
-}
-
-.small-7 {
-  flex-basis: 58.3333333333%;
-}
-
-.small-8 {
-  flex-basis: 66.6666666667%;
-}
-
-.small-9 {
-  flex-basis: 75%;
-}
-
-.small-10 {
-  flex-basis: 83.3333333333%;
-}
-
-.small-11 {
-  flex-basis: 91.6666666667%;
-}
-
-.small-12 {
-  flex-basis: 100%;
-}
-
-.parentHero {
-  position: relative;
-}
-.parentHero img {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  filter: blur(10px);
-  clip-path: inset(0);
-  box-shadow: inset 20px rgb(0, 0, 0);
-}
-.parentHero p {
-  position: absolute;
-  margin: 0;
-  inset-block-start: calc(60% - 35px);
-  inline-size: 100%;
-  padding: 1rem;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  font-weight: normal;
-  font-size: 1rem;
-}
-.parentHero h1 {
-  position: absolute;
-  margin: 0;
-  inset-block-start: calc(40% - 35px);
-  inline-size: 100%;
-  padding: 1rem;
-  text-align: center;
-  color: white;
-  font-weight: 900;
-  font-size: 2rem;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 1rem 0;
-  padding: 0;
-}
-
-.column {
-  padding: 0 8px;
-  margin: 8px 0;
-}
-
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-  background-color: #275D38;
+  background-color: #1d467c;
 }
 
 footer {
   font-size: 0.85rem;
   padding: 1rem 10px;
-  color: #f2f2f2;
+  color: #ccc;
   text-align: center;
   line-height: 150%;
 }
 footer a {
-  color: #f2f2f2;
+  color: #ccc;
 }
 
 @media only screen and (min-width: 35rem) {
   /* NAVIGATION STUFF GOES HERE  */
-  body {
-    display: block;
-  }
-  #top a, #navlinks > a {
+  #hamburgerBtn {
     display: none;
   }
-  .medium-1 {
-    flex-basis: 8.3333333333%;
-  }
-  .medium-2 {
-    flex-basis: 16.6666666667%;
-  }
-  .medium-3 {
-    flex-basis: 25%;
-  }
-  .medium-4 {
-    flex-basis: 33.3333333333%;
-  }
-  .medium-5 {
-    flex-basis: 41.6666666667%;
-  }
-  .medium-6 {
-    flex-basis: 50%;
-  }
-  .medium-7 {
-    flex-basis: 58.3333333333%;
-  }
-  .medium-8 {
-    flex-basis: 66.6666666667%;
-  }
-  .medium-9 {
-    flex-basis: 75%;
-  }
-  .medium-10 {
-    flex-basis: 83.3333333333%;
-  }
-  .medium-11 {
-    flex-basis: 91.6666666667%;
-  }
-  .medium-12 {
-    flex-basis: 100%;
-  }
-  nav {
-    height: auto;
-    border-bottom: 1px solid #f2f2f2;
-  }
-  nav ul {
+  #primaryNav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
-  nav li a {
+  nav ul li a {
     border: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    transition: background 0.25s linear;
   }
-  nav li a:hover {
-    background-color: #acacac;
-  }
-  nav li.active a:hover {
-    text-decoration: none;
-    background-color: #78BE1F;
+  nav ul li a:hover {
+    background-color: #1d467c;
     color: white;
   }
-  .parentHero h1 {
-    font-size: 2.5rem;
-  }
-  .parentHero p {
-    font-size: 1.5rem;
+  .allcards {
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media only screen and (min-width: 64rem) {
@@ -664,51 +571,5 @@ footer a {
     max-width: 960px;
     margin: auto;
   }
-  nav ul {
-    display: flex;
-    justify-content: right;
-  }
-  .large-1 {
-    flex-basis: 8.3333333333%;
-  }
-  .large-2 {
-    flex-basis: 16.6666666667%;
-  }
-  .large-3 {
-    flex-basis: 25%;
-  }
-  .large-4 {
-    flex-basis: 33.3333333333%;
-  }
-  .large-5 {
-    flex-basis: 41.6666666667%;
-  }
-  .large-6 {
-    flex-basis: 50%;
-  }
-  .large-7 {
-    flex-basis: 58.3333333333%;
-  }
-  .large-8 {
-    flex-basis: 66.6666666667%;
-  }
-  .large-9 {
-    flex-basis: 75%;
-  }
-  .large-10 {
-    flex-basis: 83.3333333333%;
-  }
-  .large-11 {
-    flex-basis: 91.6666666667%;
-  }
-  .large-12 {
-    flex-basis: 100%;
-  }
   /* NAVIGATION STUFF GOES HERE  */
-  .parentHero h1 {
-    font-size: 3rem;
-  }
-  .parentHero p {
-    font-size: 2rem;
-  }
 }/*# sourceMappingURL=styles.css.map */

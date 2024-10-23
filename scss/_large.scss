@@ -2,22 +2,5 @@ header, nav, main {
     max-width: 960px;
     margin: auto;
 }
-nav ul {
-    display: flex;
-    justify-content: right;
-}
-
-@for $i from 1 through 12 {
-    $w: calc($i /12) * 100%;
-    .large-#{$i} {flex-basis: $w;}
-}
 
 /* NAVIGATION STUFF GOES HERE  */
-.parentHero {
-    h1 {
-        font-size: 3rem;
-    }
-    p {
-        font-size: 2rem;
-    }
-}
