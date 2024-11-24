@@ -462,7 +462,8 @@ div.card section img:last-child {
     border-top: 1px solid rgba(0, 0, 0, 0.2);
   }
   #theNav li.active a {
-    background-color: #848484;
+    background-color: white;
+    color: black;
   }
   #theNav li a:hover {
     background-color: rgba(0, 0, 0, 0.3);
