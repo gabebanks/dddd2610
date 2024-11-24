@@ -3,4 +3,16 @@ header, nav, main {
     margin: auto;
 }
 
-/* NAVIGATION STUFF GOES HERE  */
+div.custom {
+    section {
+        grid-template-columns: 200px auto;
+        column-gap: 8px;
+        img {
+            clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        }
+    } 
+  } 
+  div.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
