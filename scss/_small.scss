@@ -1,42 +1,105 @@
-/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
 
-/*  Apply a natural box layout model to all elements  */
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-} // end all elements
+} 
 
+/* --------------------------- BODY --------------------------- */
 body {
     font-family: $defaultFont;
     font-weight: $lightWeight;
     min-width: 320px;
 }
 
+/* --------------------------- HEADER --------------------------- */
 #headerWrapper {border-bottom: 1px solid $greyColor;}
 header {
     display: grid;
-    grid-template-columns: 50px auto auto 44px;
+    grid-template-columns: 50px auto 44px;
     column-gap: $gutter;
     align-items: center; 
     padding: .5rem $gutter;
     span {
         font-size: 1.6rem;
-        font-weight: 700;
+        font-weight: $lightWeight;
         color: $primaryColor;
+    }
+    img {
+        width: 45px;
     }
 } 
 
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
+
+#hamburgerBtn {
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #444;
+    &:before {
+        content: "\2630";
+    }
+}
+
+nav {
+    background-color: #f7f7f7;
+    width: 180px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX(100%);
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    ul li a {
+        display: block;
+        padding: .9rem .5rem;
+        text-align: right;
+        border-bottom: 1px rgba(0,0,0,0.25) solid;
+        text-decoration: none;
+        color: $primaryColor;
+    }
+    ul li a:hover {
+        background-color: rgba(0,0,0,0.1);
+    }
+    li.active a {
+        color: white;
+        background-color: $secondaryColor;
+    }
+}
+
+.moveOver #hamburgerBtn::before {
+    content: "\2715";
+}
+
+.moveOver>.content{
+    transform: translateX(-180px);
+    transition: transform 500ms ease;
+}
+
+#pageWrapper {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* --------------------------- MAIN --------------------------- */
 main {
     h1 {
         padding: 1rem $gutter.5rem $gutter;
         font-size: 1.5rem;
         color: $secondaryColor;
-        font-weight: 600;
+        font-weight: $normalWeight
     }
     p {
         padding: .5rem $gutter;
@@ -45,6 +108,7 @@ main {
     }
 }
 
+/* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
     background-color: $primaryColor
 } 
@@ -58,64 +122,61 @@ footer {
     a {color: $greyColor;}
 }
 
-.swiper, .swiper img{
-    width: 100%;
-    height: auto;
-  }
+/* --------------------------- CARD --------------------------- */
 
-  header img {
-    width: 40px;
-  }
-
-  div.custom {
+#hotelCard {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    section {
-        padding: 7px;
-        img {
-            width: 100%;
-            height: auto;
-            clip-path: circle(50% at 50% 50%);
-            transition: transform 1s;
-            &:hover {transform: rotate(15deg)}
-        }
-    }
-  }
-
-  div.card {
-    display: grid;
-    section {
-        position: relative;
-        h2{
-            background-color: rgb(0, 0, 0);
-            padding-top: 10px;
-            padding-bottom: 10px;
-            text-align: center;
-            margin: 0;
-            color:white;
-        }
-        img {
-            padding: 0;
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        img:last-child {
-            position: absolute;
-            bottom: 0;
-        }
-    }
-  }
-
-#final {
-    justify-self: end;
+    gap: 20px; 
+    padding: 1rem $gutter.5rem $gutter;
 }
 
-#final a {
-    color: black;
+#hotelCard section {
+    display: grid;
+    padding: 4vw;
+    grid-template-areas: 
+        "name"
+        "image"
+        "address"
+        "phone";
+    gap: 10px; 
+    background-color: rgb(225, 225, 225);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#hotelCard section img {
+    grid-area: image;
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px;
+}
+
+#hotelCard section h2 {
+    grid-area: name;
+    font-size: 1.2em; 
+    color: $secondaryColor;
+}
+
+#hotelCard section p.address {
+    grid-area: address;
+    font-style: italic;
+}
+
+#hotelCard section p.models {
+    grid-area: phone;
+    align-items: center;
+}
+
+p.phone {
+    text-align: center;
+    background-color: $secondaryColor;
+    color: white;
+    border-radius: 8px;
+}
+
+p.phone a {
+    text-align: center;
+    color: white;
+    border-radius: 8px;
     text-decoration: none;
-}
-#final a:hover{
-    color: darkred;
-    text-decoration: underline;
 }

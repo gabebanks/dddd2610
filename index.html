@@ -1,115 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Navigation Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="css/styles.min.css"
+    />
 
-<head>
-	<meta charset="utf-8">
-	<title>Apple TV+</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="css/styles.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-
-<body>
-<div id="headerWrapper">
-	<header>
-        <img src="logo1x.jpg" srcset="logo2x.jpg 2x, logo3x.jpg 3x" alt="Logo"/>
-		<span>TV+</span>
-        <div id="final">
-            <a href="tel:+8018630001">801-863-0001</a>
-            </div>
-        <button id="theButton"></button>
-	</header>
-</div>
-
-<div id="navWrapper">
-    <nav>
-        <ul id="theNav">
-            <li><a href="#">Products</a></li>
-            <li class="parent"><a href="#">iCloud+</a>
-                <ul>
-                    <li><a href="#">Apple One</a></li>
-                    <li><a href="#">Apple News</a></li>
-                    <li><a href="#">Apple Fittness</a></li>
-                </ul>
-            </li>
-            <li class="active"><a href="#">TV+</a></li>
-            <li class="parent"><a href="#">Leadership Team</a>
-                <ul>
-                    <li><a href="#">Tim Cook</a></li>
-                    <li><a href="#">Craig Federighi</a></li>
-                    <li><a href="#">Gabriel Bankhead</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Contact Support</a></li>
-        </ul>
-    </nav>
-</div>
-
-<div id="mainWrapper">
-    <main>
-
-        <h1>Apple TV+ Originals</h1>        
-
-        <div class="swiper">
-            <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="images/image1.jpg" alt="Apple TV+"></div>
-            <div class="swiper-slide"><img src="images/image2.jpg" alt="Apple TV+"></div>
-            <div class="swiper-slide"><img src="images/image3.jpg" alt="Apple TV+"></div>
-            <div class="swiper-slide"><img src="images/image4.jpg" alt="Apple TV+"></div>
-            </div>
-            <div class="swiper-pagination"></div>
+  <body>
+    <div id="pageWrapper">
+      <div class="content">
+        <div id="headerWrapper">
+          <header>
+            <img src="logo1x.png" srcset="logo2x.png 2x, logo3x.png 3x" alt="Logo"/>
+            <span>Luxury Stays</span>
+            <button id="hamburgerBtn"></button>
+          </header>
         </div>
 
-        <div class="card">
-            <section>
-                <h2>iPhone 16 Pro</h2>
-                <img src="images/thing1.webp" width="400" height="250" alt="phone">
-                <img src="images/burst.png" width="400" height="250" alt="mask">
-            </section>
-            <section>
-                <h2>AirPods</h2>
-                <img src="images/thing4.webp" width="400" height="250" alt="phone">
-                <img src="images/flower.png" width="400" height="250" alt="mask">
-            </section>
-            <section>
-                <h2>iPad Air</h2>
-                <img src="images/thing2.webp" width="400" height="250" alt="phone">
-                <img src="images/flowerField.svg" width="400" height="250" alt="mask">
-            </section>
-            <section>
-                <h2>iPhone 16</h2>
-                <img src="images/thing3.webp" width="400" height="250" alt="phone">
-                <img src="images/grass-clipart-lg.svg" width="400" height="209" alt="mask">
-            </section>
+        <div id="navWrapper">
+          <nav>
+            <ul>
+              <li><a href="#">Destinations</a></li>
+              <li><a href="#">Signature Journeys</a></li>
+              <li class="active"><a href="index.html">Hotel Collections</a></li>
+              <li><a href="#">Exclusive Events</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
         </div>
 
-        <div class="custom">
-            <section>
-                <img src="images/timCook.webp" width="200" height="200" alt="customer1">
-                <p>When we think about television, we think about all the things that are great about it—enjoying incredible content with friends and family, being immersed in new worlds, and discovering amazing stories. But we also see where TV could be so much better. The experience of watching TV has been virtually standing still, while innovation has transformed so many other parts of our lives. We think Apple TV is the foundation for the future of television. It’s about making it easier than ever to discover and enjoy your favorite content, and bringing the app experience we all know and love to the biggest screen in your home.</p>
-            </section>
-            <section>
-                <img src="images/craigF.webp" width="200" height="200" alt="customer2">
-                <p>With Apple TV, we've created a platform that brings together the best of what Apple offers—great hardware, software, and services—all in one place. It’s more than just a way to watch your favorite shows and movies; it’s a gateway to apps, games, fitness, and so much more. And with features like Siri, personalized recommendations, and HomeKit integration, Apple TV truly becomes the hub of your connected living room. This is about creating an experience that feels seamless, intuitive, and, most importantly, personal.</p>
-            </section>
+        <div id="mainWrapper">
+          <main>
+            <h1>Best Stays</h1>
+            <div id="hotelCard"></div>
+          </main>
         </div>
-    </main>
-</div>
 
-<div id="footerWrapper">
-    <footer>
-        <p>Copyright &copy; 2024 Gabriel Bankhead. All rights reserved. 
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Clients</a></p>
-    </footer>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="js/scripts.js"></script>
-   
-</body>
-</html> 
+        <div id="footerWrapper">
+          <footer>
+            <p>
+              Copyright &copy; Gabriel Bankhead. 2024 All rights reserved.
+              <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> |
+              <a href="#">Clients</a>
+            </p>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="js/scripts.js" type="module"></script>
+  </body>
+</html>

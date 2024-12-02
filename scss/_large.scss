@@ -3,16 +3,88 @@ header, nav, main {
     margin: auto;
 }
 
-div.custom {
-    section {
-        grid-template-columns: 200px auto;
-        column-gap: 8px;
-        img {
-            clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-        }
-    } 
-  } 
-  div.card {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+#hamburgerBtn {
+    display: none;
 }
+
+.moveOver>.content {
+    transform: translateX(0px);
+}
+
+nav {
+    background-color: transparent;
+    position: static;
+    transform: translateX(0);
+    width: auto;
+    ul {
+        display: flex;
+        margin-left: 2%;
+    }
+    ul li a {
+        padding: .6rem 1.5rem;
+        border: none;
+    }
+}
+
+#navWrapper {
+    background-color: #f7f7f7;
+}
+
+
+#hotelCard {
+    display: grid;
+    gap: 20px;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+#hotelCard section {
+    display: grid;
+    padding: 10px; 
+    grid-template-columns: 300px 1fr; 
+    grid-template-areas: 
+        "image name"
+        "image address"
+        "image phone";
+    background-color: rgb(240, 239, 239);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#hotelCard section img {
+    grid-area: image;
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+#hotelCard section h2 {
+    grid-area: name;
+    font-size: 1.2em;
+    color: $secondaryColor;
+    margin: 0; }
+
+#hotelCard section p {
+    margin: 0; 
+    font-size: small;
+}
+
+#hotelCard section p.address {
+    grid-area: address;
+    font-style: italic;
+}
+
+#hotelCard section p.phone {
+    grid-area: phone;
+    text-align: center;
+    background-color: $secondaryColor;
+    color: white;
+    border-radius: 8px;
+}
+
+#hotelCard section p.phone a {
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
