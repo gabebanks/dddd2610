@@ -1,51 +1,30 @@
-#hotelCard {
-    display: grid;
-    gap: 20px; 
-    padding: 1rem;
+/* NAVIGATION STUFF GOES HERE  */
+
+nav {
+    ul {
+        a {
+            img {display: none;}
+            span {display: block;}
+        }
+    }
 }
 
-#hotelCard section {
-    display: grid;
-    padding: 15px;
-    grid-template-columns: 400px 1fr; 
-    grid-template-areas: 
-        "image name"
-        "image address"
-        "image phone";
-    gap: 10px; 
-    background-color: rgb(240, 239, 239);
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+.card-image {
+    width: 100%;
+    object-fit: cover;
+    padding: 20px;
+    border-radius: 20px;
 }
 
-#hotelCard section img {
-    grid-area: image;
-    width: 100%; 
-    height: auto; 
-    border-radius: 8px;
+image.card-image {
+    border-radius: 100px;
 }
 
-#hotelCard section h2 {
-    grid-area: name;
-    font-size: 1.2em; 
-    color: $secondaryColor;
+div.card-content {
+    text-align: left;
 }
 
-#hotelCard section p.address {
-    grid-area: address;
-    font-style: italic;
-}
-
-#hotelCard section p.phone {
-    grid-area: phone;
-    text-align: center;
-    background-color: $secondaryColor;
-    color: white;
-    border-radius: 8px;
-}
-
-#hotelCard section p.phone a {
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
+div.card {
+display: grid;
+grid-template-columns: 1fr 1fr;
 }

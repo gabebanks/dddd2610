@@ -1,6 +1,7 @@
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -9,18 +10,19 @@ html {
     box-sizing: border-box;
 } 
 
-/* --------------------------- BODY --------------------------- */
 body {
     font-family: $defaultFont;
     font-weight: $lightWeight;
     min-width: 320px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* --------------------------- HEADER --------------------------- */
 #headerWrapper {border-bottom: 1px solid $greyColor;}
+
 header {
     display: grid;
-    grid-template-columns: 50px auto 44px;
+    grid-template-columns: 50px auto;
     column-gap: $gutter;
     align-items: center; 
     padding: .5rem $gutter;
@@ -29,154 +31,213 @@ header {
         font-weight: $lightWeight;
         color: $primaryColor;
     }
-    img {
-        width: 45px;
-    }
 } 
 
-/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-
-#hamburgerBtn {
-    width: 44px;
-    height: 44px;
+#mainWrapper {
     margin: 0;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #444;
-    &:before {
-        content: "\2630";
-    }
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-nav {
-    background-color: #f7f7f7;
-    width: 180px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    transform: translateX(100%);
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    ul li a {
-        display: block;
-        padding: .9rem .5rem;
-        text-align: right;
-        border-bottom: 1px rgba(0,0,0,0.25) solid;
-        text-decoration: none;
-        color: $primaryColor;
-    }
-    ul li a:hover {
-        background-color: rgba(0,0,0,0.1);
-    }
-    li.active a {
-        color: white;
-        background-color: $secondaryColor;
-    }
-}
-
-.moveOver #hamburgerBtn::before {
-    content: "\2715";
-}
-
-.moveOver>.content{
-    transform: translateX(-180px);
-    transition: transform 500ms ease;
-}
-
-#pageWrapper {
-    position: relative;
-    overflow-x: hidden;
-}
-
-/* --------------------------- MAIN --------------------------- */
 main {
+    flex-grow: 1;
     h1 {
+        flex-grow: 1;
         padding: 1rem $gutter.5rem $gutter;
         font-size: 1.5rem;
         color: $secondaryColor;
-        font-weight: $normalWeight
+        font-weight: $lightWeight;
+        margin: 0;
     }
     p {
         padding: .5rem $gutter;
-        color: #333;
+        color: #000000;
         line-height: $leading;
     }
 }
 
-/* --------------------------- FOOTER --------------------------- */
+section {
+    flex-grow: 0;
+    padding: 3vh;
+    height: 100vh;
+    h1 {
+        margin: 0;
+        padding: 3vh;
+    }
+    h2 {margin: 0;
+    padding: 3vh;}
+    p{padding: 3vh; color: black;}
+    overflow: hidden;
+}
+
+#navWrapper {
+    background-color: $menuColor;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        li {
+            flex: 1;
+        }
+        li.active {
+            background-color: darken($menuColor,10%);
+
+        }
+        a {
+            display: block;
+            text-align: center;
+            padding: 0.75rem;
+            color: white;
+            text-decoration: none;
+            img {width: 25px;}
+            span {display: none;}
+            &:hover {
+                background-color: lighten($menuColor,10%);
+            }
+        }
+    }
+}
+
+#one {
+    background-color: rgb(255, 255, 255);
+    h1 {
+        margin: 0;
+        font-weight: bold;
+    }
+    h2 {
+        color: $primaryColor;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+    }
+    img {
+        width: 75%;
+        padding: 20px;
+        align-items: center;
+    }
+    p{color: #333;}
+}
+#two {
+    background-color: rgb(125, 125, 125);
+    h2 {
+        color: white;
+    }
+}
+#three {
+    background-color: rgb(174, 186, 196);
+    h2 {color: #333;}
+    h3 {color: #333;}
+    p {color: #333;}
+}
+#four {
+    background-color: rgb(126, 126, 126);
+    color: white;
+}
+#five {
+    background-color: rgb(174, 186, 196);
+    h3 {
+        color: #333;
+    }
+    p { color: #333;}
+}
+
+.card-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
+.card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.card-content p {
+    font-size: 1em;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.card-content p:hover {
+    color: #ffffff; 
+}
+
 #footerWrapper {
-    background-color: $primaryColor
-} 
+    background-color: $primaryColor;
+    width: 100%; 
+}
 
 footer {
     font-size: .85rem;
     padding: 1rem $gutter;
     color: $greyColor;
     text-align: center;
-    line-height: $leading;
-    a {color: $greyColor;}
-}
-
-/* --------------------------- CARD --------------------------- */
-
-#hotelCard {
-    display: grid;
-    gap: 20px; 
-    padding: 1rem $gutter.5rem $gutter;
-}
-
-#hotelCard section {
-    display: grid;
-    padding: 4vw;
-    grid-template-areas: 
-        "name"
-        "image"
-        "address"
-        "phone";
-    gap: 10px; 
-    background-color: rgb(225, 225, 225);
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
-}
-
-#hotelCard section img {
-    grid-area: image;
-    width: 100%; 
-    height: auto; 
-    border-radius: 8px;
-}
-
-#hotelCard section h2 {
-    grid-area: name;
-    font-size: 1.2em; 
-    color: $secondaryColor;
-}
-
-#hotelCard section p.address {
-    grid-area: address;
-    font-style: italic;
-}
-
-#hotelCard section p.models {
-    grid-area: phone;
+    justify-content: center; 
     align-items: center;
+    line-height: $leading;
+    a { color: $greyColor; }
 }
 
-p.phone {
-    text-align: center;
-    background-color: $secondaryColor;
-    color: white;
-    border-radius: 8px;
+body {
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
-p.phone a {
-    text-align: center;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
+#mainWrapper {
+    flex-grow: 1; 
 }
+
+section.social {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    img {
+        height: 40px; 
+        &:hover{
+            background-color: rgb(0, 0, 0);
+            border-radius: 8px;
+        }
+    }
+    height: 5vh;
+
+}
+

@@ -1,65 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Navigation Example</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="css/styles.min.css"
-    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+	<meta charset="utf-8">
+	<title>Navigation Example</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/styles.min.css">
 
-  <body>
-    <div id="pageWrapper">
-      <div class="content">
-        <div id="headerWrapper">
-          <header>
-            <img src="logo1x.png" srcset="logo2x.png 2x, logo3x.png 3x" alt="Logo"/>
-            <span>Luxury Stays</span>
-            <button id="hamburgerBtn"></button>
-          </header>
+<!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    
+    
+<div id="navWrapper">
+    <nav>
+        <ul>
+            <li class="active"><a href="#one"><img src="images/1.svg"  alt="1"><span>About Me</span></a></li>
+            <li><a href="#two"><img src="images/2.svg"  alt="2"><span>Leadership & Public Speaking</span></a></li>
+            <li><a href="#three"><img src="images/3.svg"  alt="3"><span>User Experience Design</span></a></li>
+            <li><a href="#four"><img src="images/4.svg"  alt="4"><span>Visual Design & Creativity</span></a></li>            
+            <li><a href="#five"><img src="images/5.svg"  alt="5"><span>Photography & Videography</span></a></li>
+        </ul>
+    </nav>
+</div> <!-- end nav wrapper -->
+
+<div id="mainWrapper">
+    <main>
+
+     <section id="one">
+        <h1>Welcome To My Portfolio</h1>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/head.png" alt="head" class="card-image">
+                <div class="card-content">
+                    <h2>Gabriel Bankhead</h2>
+                    <p>
+                        Over the years, I've honed my leadership skills by managing diverse teams, fostering collaboration, and creating innovative solutions. 
+                        My focus on empathy and strategic vision has helped build strong, goal-oriented teams. In addition, I am also passionate about public speaking at conferences, pannels, etc.
+                    </p>
+                </div>
+            </div>
         </div>
+     </section>
 
-        <div id="navWrapper">
-          <nav>
-            <ul>
-              <li><a href="#">Destinations</a></li>
-              <li><a href="#">Signature Journeys</a></li>
-              <li class="active"><a href="index.html">Hotel Collections</a></li>
-              <li><a href="#">Exclusive Events</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
+     <section id="two">
+        <h2>Leadership & Public Speaking</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/leadership.jpg" alt="Leadership" class="card-image">
+                <div class="card-content">
+                    <h3>Leadership Experience</h3>
+                    <p>
+                        Over the years, I've honed my leadership skills by managing diverse teams, fostering collaboration, and creating innovative solutions. 
+                        My focus on empathy and strategic vision has helped build strong, goal-oriented teams. In addition, I am also passionate about public speaking at conferences, pannels, etc.
+                    </p>
+                </div>
+            </div>
         </div>
+     </section>
 
-        <div id="mainWrapper">
-          <main>
-            <h1>Best Stays</h1>
-            <div id="hotelCard"></div>
-          </main>
+     <section id="three">
+        <h2>User Experience Design</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/ux-design.jpg" alt="User Experience Design" class="card-image">
+                <div class="card-content">
+                    <h3>User Experience Design</h3>
+                    <p>
+                        This UX design project demonstrates a deep commitment to understanding user needs and translating them into intuitive, accessible, and visually appealing digital experiences. Through comprehensive user research, wireframes, and iterative prototyping, the design focuses on enhancing usability and engagement.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div id="footerWrapper">
-          <footer>
-            <p>
-              Copyright &copy; Gabriel Bankhead. 2024 All rights reserved.
-              <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> |
-              <a href="#">Clients</a>
-            </p>
-          </footer>
+     <section id="four">
+        <h2>Visual Design & Creativity</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/adobe.jpg" alt="Adobe" class="card-image">
+                <div class="card-content">
+                    <h3>Visual Design Project</h3>
+                    <p>This project showcases a comprehensive redesign of a digital product, focused on enhancing the user experience through intuitive interfaces and visually engaging elements. The goal was to streamline navigation, improve accessibility, and create a clean, modern aesthetic that aligns with the brand's identity.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <script src="js/scripts.js" type="module"></script>
-  </body>
-</html>
+     </section>
+
+     <section id="five">
+        <h2>Photography & Videography</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/videography.jpg" alt="Videography" class="card-image">
+                <div class="card-content">
+                    <h3>Videography</h3>
+                    <p>
+                        This videography project focuses on telling a compelling story through the lens of nature, capturing the beauty of landscapes, wildlife, and the changing seasons. Using high-quality camera equipment and dynamic shot composition, the project highlights the delicate balance between human presence and the natural world. With an emphasis on cinematic visuals, smooth transitions, and immersive sound design, the video creates an emotional connection with the viewer.</p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    </main>
+</div>
+    
+<div id="footerWrapper">
+    <footer>
+        <section class="social">
+            <a href="#"><img src="images/logoInsta.svg" alt="Instagram"></a>
+            <a href="#"><img src="images/logoLinked.svg" alt="LinkedIn"></a>
+            <a href="#"><img src="images/logoYou.svg" alt="Youtube"></a>
+            <a href="#"><img src="images/logoPin.svg" alt="Pintrest"></a>
+        </section>
+        <p>Copyright &copy; 2025 Gabriel Bankhead | All rights reserved. 
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Clients</a></p>
+    </footer>
+</div>
+   
+<script src="js/scripts.js" type="module"></script>
+</body>
+</html> 
