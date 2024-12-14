@@ -3,125 +3,138 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Navigation Example</title>
+	<title>Bankhead Designs</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/styles.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+        <div id="headerWrapper">
+            <header>
+                <img src="logo1x.png" srcset="logo2x.png 2x, logo3x.png 3x" alt="Logo"/>
+                <span>Bankhead Designs</span>
+                <div id="hamburgerBtn"><button></button></div>
+            </header>
+            <nav id="primaryNav">
+                <ul>
+                    <li><a href="#">Clients</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li class="active"><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
 
-
-    
-    
-<div id="navWrapper">
-    <nav>
-        <ul>
-            <li class="active"><a href="#one"><img src="images/1.svg"  alt="1"><span>About Me</span></a></li>
-            <li><a href="#two"><img src="images/2.svg"  alt="2"><span>Leadership & Public Speaking</span></a></li>
-            <li><a href="#three"><img src="images/3.svg"  alt="3"><span>User Experience Design</span></a></li>
-            <li><a href="#four"><img src="images/4.svg"  alt="4"><span>Visual Design & Creativity</span></a></li>            
-            <li><a href="#five"><img src="images/5.svg"  alt="5"><span>Photography & Videography</span></a></li>
-        </ul>
-    </nav>
-</div> <!-- end nav wrapper -->
 
 <div id="mainWrapper">
     <main>
+        <div class="hero">
+        <video autoplay muted playsinline loop width="800" height="300">
+            <source src="media/hero-video-hb.webm" type="video/webm" />
+            <source src="media/hero-video-hb.mp4" type="video/mp4" />
+        </video>
+        <div>
+            <h3>UX/UI Designer</h3>
+            <p>Crafting The User Experience</p>
+        </div>
+        </div>    
+        <h1>About Us</h1>
+        <p>Learn more about how Bankhead Designs can provide creative solutions for your digital products.</p>
+        <h2>How We Can Help</h2>
 
-     <section id="one">
-        <h1>Welcome To My Portfolio</h1>
         <div class="card-container">
             <div class="card">
-                <img src="images/head.png" alt="head" class="card-image">
-                <div class="card-content">
-                    <h2>Gabriel Bankhead</h2>
-                    <p>
-                        Over the years, I've honed my leadership skills by managing diverse teams, fostering collaboration, and creating innovative solutions. 
-                        My focus on empathy and strategic vision has helped build strong, goal-oriented teams. In addition, I am also passionate about public speaking at conferences, pannels, etc.
-                    </p>
-                </div>
+                <h3>Research & Testing</h3>
+                <img src="images/image-1.webp" alt="Image 1">
+                <ul>
+                    <li>Research user needs</li>
+                    <li>Prototype and iterate</li>
+                    <li>Test designs with real users</li>
+                    <li>Improve usability and accessibility</li>
+                </ul>
             </div>
-        </div>
-     </section>
-
-     <section id="two">
-        <h2>Leadership & Public Speaking</h2>
-        <div class="card-container">
             <div class="card">
-                <img src="images/leadership.jpg" alt="Leadership" class="card-image">
-                <div class="card-content">
-                    <h3>Leadership Experience</h3>
-                    <p>
-                        Over the years, I've honed my leadership skills by managing diverse teams, fostering collaboration, and creating innovative solutions. 
-                        My focus on empathy and strategic vision has helped build strong, goal-oriented teams. In addition, I am also passionate about public speaking at conferences, pannels, etc.
-                    </p>
-                </div>
+                <h3>User-Centered Design</h3>
+                <img src="images/image-2.webp" alt="Image 2">
+                <ul>
+                    <li>Empathy mapping</li>
+                    <li>Personas creation</li>
+                    <li>Wireframing and design</li>
+                    <li>Deliver interactive prototypes</li>
+                </ul>
             </div>
-        </div>
-     </section>
-
-     <section id="three">
-        <h2>User Experience Design</h2>
-        <div class="card-container">
             <div class="card">
-                <img src="images/ux-design.jpg" alt="User Experience Design" class="card-image">
-                <div class="card-content">
-                    <h3>User Experience Design</h3>
-                    <p>
-                        This UX design project demonstrates a deep commitment to understanding user needs and translating them into intuitive, accessible, and visually appealing digital experiences. Through comprehensive user research, wireframes, and iterative prototyping, the design focuses on enhancing usability and engagement.</p>
-                </div>
+                <h3>UX Optimization</h3>
+                <img src="images/image-3.webp" alt="Image 3">
+                <ul>
+                    <li>Usability testing</li>
+                    <li>UX audits</li>
+                    <li>User journey mapping</li>
+                    <li>Stakeholder communication</li>
+                </ul>
             </div>
-        </div>
-    </section>
-
-     <section id="four">
-        <h2>Visual Design & Creativity</h2>
-        <div class="card-container">
             <div class="card">
-                <img src="images/adobe.jpg" alt="Adobe" class="card-image">
-                <div class="card-content">
-                    <h3>Visual Design Project</h3>
-                    <p>This project showcases a comprehensive redesign of a digital product, focused on enhancing the user experience through intuitive interfaces and visually engaging elements. The goal was to streamline navigation, improve accessibility, and create a clean, modern aesthetic that aligns with the brand's identity.</p>
-                </div>
+                <h3>Systematic Design</h3>
+                <img src="images/image-4.webp" alt="Image 4">
+                <ul>
+                    <li>Information architecture</li>
+                    <li>Design systems implementation</li>
+                    <li>Mobile-first design</li>
+                    <li>Post-launch user feedback collection</li>
+                </ul>
             </div>
         </div>
-     </section>
 
-     <section id="five">
-        <h2>Photography & Videography</h2>
-        <div class="card-container">
-            <div class="card">
-                <img src="images/videography.jpg" alt="Videography" class="card-image">
-                <div class="card-content">
-                    <h3>Videography</h3>
-                    <p>
-                        This videography project focuses on telling a compelling story through the lens of nature, capturing the beauty of landscapes, wildlife, and the changing seasons. Using high-quality camera equipment and dynamic shot composition, the project highlights the delicate balance between human presence and the natural world. With an emphasis on cinematic visuals, smooth transitions, and immersive sound design, the video creates an emotional connection with the viewer.</p>
-                </div>
-            </div>
-        </div>
-     </section>
+<h2>Clients We Work With</h2>
+<div class="image-container">
+    <img src="images/client-A.webp" alt="A">
+    <img src="images/client-B.webp" alt="B">
+    <img src="images/client-C.webp" alt="C">
+    <img src="images/client-D.webp" alt="D">
+    <img src="images/client-E.webp" alt="E">
+    <img src="images/client-F.webp" alt="F">
 
+
+</div>
     </main>
 </div>
     
 <div id="footerWrapper">
     <footer>
-        <section class="social">
-            <a href="#"><img src="images/logoInsta.svg" alt="Instagram"></a>
-            <a href="#"><img src="images/logoLinked.svg" alt="LinkedIn"></a>
-            <a href="#"><img src="images/logoYou.svg" alt="Youtube"></a>
-            <a href="#"><img src="images/logoPin.svg" alt="Pintrest"></a>
-        </section>
-        <p>Copyright &copy; 2025 Gabriel Bankhead | All rights reserved. 
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Clients</a></p>
+        <div class="footer-content">
+            <div class="contact">
+                <a href="tel:+1234567890" class="phone-number">Call Us: 801-863-0000</a>
+            </div>
+            <div class="locations">
+                <div class="location-card">
+                    <h4>New York Office</h4>
+                    <p>123 5th Ave, New York, NY 10001</p>
+                </div>
+                <div class="location-card">
+                    <h4>Los Angeles Office</h4>
+                    <p>456 Sunset Blvd, Los Angeles, CA 90028</p>
+                </div>
+                <div class="location-card">
+                    <h4>San Francisco Office</h4>
+                    <p>789 Market St, San Francisco, CA 94105</p>
+                </div>
+            </div>
+
+            <div class="company-info">
+                <p>Gabriel Bankhead<br> 101 Business St, Business City, CA 12345</p>
+            </div>
+            <div class="footer-links">
+                <p>Copyright &copy; 2025 Bankhead Designs Inc. All rights reserved.</p>
+                    <p>Privacy Policy | Terms of Use | Clients</p>
+            </div>
+        </div>
     </footer>
 </div>
-   
-<script src="js/scripts.js" type="module"></script>
+   <script src="js/scripts.js"></script>
 </body>
 </html> 

@@ -1,26 +1,81 @@
-body {
-    display: grid;
-    grid-template-columns: 250px auto;
-}
-#navWrapper {
-    grid-row: 1 / span 3;
-    position: relative;
-}
-nav ul {
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    position: fixed;
-    li {
-        flex: none;
-    }
+header, nav, main {
+    max-width: 960px;
+    margin: auto;
 }
 
-nav {
-    ul {
-        a {
-            img {display: none;}
-            span {display: block;}
-        }
-    }
+#hamburgerBtn button {
+    display: none;
 }
+
+#primaryNav ul, #primaryNav ul.open {
+    display: flex;
+    width: auto;
+    position: static;
+    border: none;
+    box-shadow: none;
+    li a {
+        padding: .4rem 1rem;
+    }
+    a:hover {
+        text-decoration: underline 4px $secondaryColor;
+    }
+    li.active a {
+        text-decoration: none;
+    }}
+
+    .hero {
+        position: relative;
+    }
+    
+    .hero div {
+        position: absolute;
+        bottom: 0; 
+        background: rgb(0, 0, 0);
+        background: linear-gradient(180deg, rgba(0,0,0,.5) 14%, rgba(0,0,0,0.8155637254901961) 40%, rgba(0,0,0,0) 100%);        
+        color: white;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .hero div h3 {
+        text-shadow: 0 0 2px #000;
+        font-size: 36px;
+        margin: 0;
+        padding-top: 20vh;
+    }
+    
+    .hero div p {
+        text-shadow: 0 0 2px #000;
+        font-size: 18px;
+        margin-top: 3vh;
+        font-weight: lighter;
+    }
+    
+    .hero video {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 20px;
+        gap: 20px;
+    }
+    
+    .card {
+        background: rgba(255, 255, 255, 0.1); 
+        backdrop-filter: blur(10px); 
+        border-radius: 15px;
+        padding: 20px;
+        width: 100%;
+        color: rgb(0, 0, 0);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    div.card {
+        padding: 20px;
+    }
