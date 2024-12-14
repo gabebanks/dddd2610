@@ -346,12 +346,12 @@ header span {
   font-size: 1.6rem;
   font-weight: bold;
   display: block;
-  color: #e15818;
+  color: #123154;
 }
 
 .slogan {
   font-size: 12px;
-  color: #e15818;
+  color: #123154;
   margin: 0;
 }
 
@@ -391,7 +391,7 @@ li a {
 }
 
 li.active a {
-  background-color: #e15818;
+  background-color: #123154;
   color: white;
   font-weight: normal;
 }
@@ -502,12 +502,12 @@ main p {
 }
 
 h2 {
-  color: #e15818;
+  color: #123154;
   margin: 10px;
 }
 
 #footerWrapper {
-  background-color: #e15818;
+  background-color: #123154;
   padding: 20px;
   text-align: center;
   color: white;
@@ -616,7 +616,7 @@ footer {
     text-decoration: none;
   }
   li.active a {
-    background-color: #e15818;
+    background-color: #123154;
     color: white;
     font-weight: 500;
   }
